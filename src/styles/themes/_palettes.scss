@@ -1,0 +1,27 @@
+$dark-primary-text: rgba(black, 0.87);
+$light-primary-text: white;
+
+$green-palette: (
+  50: #e5f5ee,
+  100: #c0e6d5,
+  200: #98d6bb,
+  300: #6cc6a1,
+  400: #48ba8e,
+  500: #14ae7a,
+  600: #0e9f6f,
+  700: #088d61,
+  800: #087b55,
+  900: #0b5c3e,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+  ),
+);
