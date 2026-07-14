@@ -1,0 +1,42 @@
+@use 'abstracts' as abstracts;
+
+.login {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: abstracts.rem(8);
+
+  &__container {
+    width: 100%;
+    max-width: abstracts.rem(420);
+  }
+
+  &__card {
+    padding: abstracts.rem(16);
+    border-radius: abstracts.rem(16);
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: abstracts.rem(8);
+  }
+
+  &__subtitle {
+    color: abstracts.$text-secondary;
+    margin-bottom: abstracts.rem(8);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: abstracts.rem(20);
+  }
+
+  &__error {
+    color: abstracts.$text-error;
+  }
+}
