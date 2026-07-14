@@ -36,7 +36,13 @@
     gap: abstracts.rem(20);
   }
 
+  &__field {
+    margin-bottom: abstracts.rem(8);
+  }
+
   &__error {
+    text-align: center;
+    margin-bottom: abstracts.rem(4);
     color: abstracts.$text-error;
   }
 }

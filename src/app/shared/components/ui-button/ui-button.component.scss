@@ -1,11 +1,13 @@
+@use 'abstracts' as abstracts;
+
 .full-width {
   width: 100%;
 }
 
 button {
-  min-height: 44px;
+  min-height: abstracts.rem(36);
 }
 
 mat-icon {
-  margin-right: 8px;
+  margin-right: abstracts.rem(8);
 }

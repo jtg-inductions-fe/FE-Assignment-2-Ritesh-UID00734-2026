@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginRequest } from '@core/models/login-request.model';
 import { AuthService } from '@core/services/auth.service';
+import { LoginRequest } from '@core/models/login-request.model';
 
 @Component({
   selector: 'app-login',
@@ -10,34 +10,35 @@ import { AuthService } from '@core/services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  hidePassword = true;
-
-  loginForm: FormGroup;
-
   loginError = '';
+
+  validationMessages = {
+    email: {
+      required: 'Email is required',
+      email: 'Enter a valid email',
+    },
+    password: {
+      required: 'Password is required',
+      minlength: 'Password must be at least 6 characters',
+    },
+  };
 
   constructor(
     private readonly fb: FormBuilder,
     private readonly authService: AuthService,
     private readonly router: Router
-  ) {
-    this.loginForm = this.initializeForm();
-  }
+  ) {}
 
-  private initializeForm(): FormGroup {
-    return this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-    });
-  }
+  loginForm = this.fb.nonNullable.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]],
+  });
 
   onSubmit(): void {
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
       return;
     }
-
-    this.loginError = '';
 
     const credentials: LoginRequest = this.loginForm.getRawValue();
 
@@ -48,15 +49,12 @@ export class LoginComponent {
           return;
         }
 
-        if (user.role === 'admin') {
-          this.router.navigate(['/admin/dashboard']);
-          return;
-        }
-
-        this.router.navigate(['/owner/dashboard']);
+        this.router.navigate([
+          user.role === 'admin' ? '/admin/dashboard' : '/owner/dashboard',
+        ]);
       },
       error: () => {
-        this.loginError = 'Something went wrong. Please try again.';
+        this.loginError = 'Something went wrong.';
       },
     });
   }

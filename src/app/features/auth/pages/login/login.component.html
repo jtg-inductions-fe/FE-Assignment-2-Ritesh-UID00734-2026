@@ -3,61 +3,36 @@
     <mat-card class="login__card">
       <div class="login__header">
         <p class="login__title mat-headline-5">Restaurant Portal</p>
+
         <p class="login__subtitle mat-caption">
           Log in to manage orders, menus, and stats.
         </p>
       </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="login__field">
+          <app-ui-input
+            label="Email"
+            [control]="loginForm.controls.email"
+            [errors]="validationMessages.email">
+          </app-ui-input>
+        </div>
 
-      <form class="login__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <mat-form-field appearance="outline" class="login__field">
-          <mat-label>Email</mat-label>
-
-          <input
-            matInput
-            type="email"
-            formControlName="email"
-            placeholder="Enter your email" />
-
-          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
-            Email is required
-          </mat-error>
-
-          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
-            Enter a valid email
-          </mat-error>
-        </mat-form-field>
-
-        <mat-form-field appearance="outline" class="login__field">
-          <mat-label>Password</mat-label>
-
-          <input
-            matInput
-            [type]="hidePassword ? 'password' : 'text'"
-            formControlName="password"
-            placeholder="Enter your password" />
-
-          <button
-            mat-icon-button
-            matSuffix
-            type="button"
-            (click)="hidePassword = !hidePassword">
-            <mat-icon>
-              {{ hidePassword ? 'visibility_off' : 'visibility' }}
-            </mat-icon>
-          </button>
-
-          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
-            Password is required
-          </mat-error>
-        </mat-form-field>
-        <div class="login__error" *ngIf="loginError">
+        <div class="login__field">
+          <app-ui-input
+            label="Password"
+            [control]="loginForm.controls.password"
+            [errors]="validationMessages.password">
+          </app-ui-input>
+        </div>
+        <div class="login__error mat-caption" *ngIf="loginError">
           {{ loginError }}
         </div>
+
         <app-ui-button
-          label="Login"
+          label="LOGIN"
+          type="submit"
           variant="raised"
           color="primary"
-          type="submit"
           [disabled]="loginForm.invalid"
           [fullWidth]="true">
         </app-ui-button>
