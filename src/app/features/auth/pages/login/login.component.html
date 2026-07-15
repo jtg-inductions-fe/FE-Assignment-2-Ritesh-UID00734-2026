@@ -12,14 +12,16 @@
         <div class="login__field">
           <app-ui-input
             label="Email"
+            type="email"
             [control]="loginForm.controls.email"
             [errors]="validationMessages.email">
           </app-ui-input>
         </div>
-
         <div class="login__field">
           <app-ui-input
             label="Password"
+            type="password"
+            [showPasswordToggle]="true"
             [control]="loginForm.controls.password"
             [errors]="validationMessages.password">
           </app-ui-input>

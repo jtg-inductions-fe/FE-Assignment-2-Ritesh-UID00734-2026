@@ -32,7 +32,7 @@ export class UiInputComponent {
   hidePassword = true;
 
   get inputType(): string {
-    if (!this.showPasswordToggle) {
+    if (this.type !== 'password') {
       return this.type;
     }
 
@@ -40,6 +40,10 @@ export class UiInputComponent {
   }
 
   togglePassword(): void {
+    if (this.type !== 'password') {
+      return;
+    }
+
     this.hidePassword = !this.hidePassword;
   }
 

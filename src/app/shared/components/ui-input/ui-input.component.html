@@ -10,7 +10,7 @@
     [formControl]="control" />
 
   <button
-    *ngIf="showPasswordToggle"
+    *ngIf="type === 'password' && showPasswordToggle"
     mat-icon-button
     matSuffix
     type="button"
