@@ -2,16 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Permission } from '@core/authorization/permission.enum';
 import { permissionGuard } from '@core/authorization/permission.guard';
-
-import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
+import { RestaurantPageComponent } from './pages/restaurant-page/restaurant-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: DashboardPageComponent,
+    component: RestaurantPageComponent,
     canActivate: [permissionGuard],
     data: {
-      permission: Permission.VIEW_DASHBOARD,
+      permission: Permission.VIEW_RESTAURANTS,
     },
   },
 ];
@@ -20,4 +19,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class DashboardRoutingModule {}
+export class RestaurantRoutingModule {}

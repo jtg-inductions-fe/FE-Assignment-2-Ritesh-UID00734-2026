@@ -1,0 +1,27 @@
+@use 'abstracts' as abstracts;
+
+.header {
+  border-bottom: abstracts.rem(1) solid abstracts.$border-primary;
+
+  &__toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: inherit;
+    padding-inline: abstracts.rem(16);
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__user {
+    padding: abstracts.rem(12) abstracts.rem(16);
+  }
+
+  &__user-email {
+    margin: abstracts.rem(4) 0 0;
+    color: abstracts.$text-secondary;
+  }
+}

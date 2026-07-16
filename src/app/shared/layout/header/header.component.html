@@ -1,0 +1,37 @@
+<header class="header">
+  <mat-toolbar class="header__toolbar">
+    <a
+      class="header__logo"
+      routerLink="/dashboard"
+      aria-label="Restaurant Management">
+      <img src="assets/images/app-logo.svg" alt="Restaurant Management Logo" />
+    </a>
+
+    <ng-container *ngIf="currentUser$ | async as currentUser">
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="userMenu"
+        aria-label="Open user menu">
+        <img [src]="currentUser.avatar" [alt]="currentUser.name" />
+      </button>
+
+      <mat-menu #userMenu="matMenu">
+        <section class="header__user">
+          <p class="header__user-name">
+            {{ currentUser.name }}
+          </p>
+          <p class="header__user-email">
+            {{ currentUser.email }}
+          </p>
+        </section>
+
+        <mat-divider></mat-divider>
+
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>logout</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </ng-container>
+  </mat-toolbar>
+</header>
