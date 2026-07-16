@@ -1,0 +1,26 @@
+<h1>Welcome {{ currentUser?.name }}</h1>
+<p>
+  Role:
+  <strong>{{ currentUser?.role }}</strong>
+</p>
+<hr />
+<div *ngIf="permissionService.hasPermission(Permission.VIEW_DASHBOARD)">
+  <h2>Dashboard</h2>
+  <p>You have access to view the dashboard.</p>
+</div>
+<div *ngIf="permissionService.hasPermission(Permission.VIEW_RESTAURANTS)">
+  <h2>Restaurants</h2>
+  <p>You can view the list of restaurants.</p>
+</div>
+<div *ngIf="permissionService.hasPermission(Permission.CREATE_RESTAURANT)">
+  <h2>Create Restaurant</h2>
+  <p>You can create new restaurants.</p>
+</div>
+<div *ngIf="permissionService.hasPermission(Permission.EDIT_RESTAURANT)">
+  <h2>Edit Restaurant</h2>
+  <p>You can edit existing restaurants.</p>
+</div>
+<div *ngIf="permissionService.hasPermission(Permission.VIEW_ORDERS)">
+  <h2>Orders</h2>
+  <p>You can view restaurant orders.</p>
+</div>

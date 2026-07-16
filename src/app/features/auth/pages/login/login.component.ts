@@ -48,10 +48,7 @@ export class LoginComponent {
           this.loginError = 'Invalid email or password';
           return;
         }
-
-        this.router.navigate([
-          user.role === 'admin' ? '/admin/dashboard' : '/owner/dashboard',
-        ]);
+        this.router.navigate(['/dashboard']);
       },
       error: () => {
         this.loginError = 'Something went wrong.';
