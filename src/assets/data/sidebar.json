@@ -1,0 +1,104 @@
+{
+  "primary": [
+    {
+      "id": "overview",
+      "label": "Overview",
+      "icon": "pie_chart",
+      "route": "/dashboard"
+    },
+    {
+      "id": "restaurants",
+      "label": "Restaurants",
+      "icon": "restaurant",
+      "route": "/restaurant",
+      "permission": "VIEW_RESTAURANTS"
+    },
+    {
+      "id": "menu",
+      "label": "Menu",
+      "icon": "menu_book",
+      "route": "/menu",
+      "permission": "VIEW_MENU"
+    },
+    {
+      "id": "billing-history",
+      "label": "Billing history",
+      "icon": "receipt_long",
+      "route": "/billing-history",
+      "permission": "VIEW_BILLING_HISTORY"
+    },
+    {
+      "id": "inventory",
+      "label": "Inventory",
+      "icon": "inventory_2",
+      "route": "/inventory",
+      "permission": "VIEW_INVENTORY"
+    },
+    {
+      "id": "messages",
+      "label": "Messages",
+      "icon": "inbox",
+      "route": "/messages",
+      "badge": 1
+    },
+    {
+      "id": "access",
+      "label": "Access",
+      "icon": "lock",
+      "children": [
+        {
+          "id": "users",
+          "label": "Users",
+          "icon": "people",
+          "route": "/users"
+        },
+        {
+          "id": "roles",
+          "label": "Roles",
+          "icon": "security",
+          "route": "/roles"
+        }
+      ]
+    }
+  ],
+  "secondary": [
+    {
+      "id": "profile",
+      "label": "My Profile",
+      "icon": "person",
+      "route": "/profile"
+    },
+    {
+      "id": "gallery",
+      "label": "Gallery",
+      "icon": "photo_library",
+      "route": "/gallery"
+    },
+    {
+      "id": "help",
+      "label": "Help",
+      "icon": "help_outline",
+      "route": "/help"
+    }
+  ],
+  "footer": [
+    {
+      "id": "tune",
+      "label": "Tune",
+      "icon": "tune",
+      "route": "/tune"
+    },
+    {
+      "id": "language",
+      "label": "Language",
+      "icon": "public",
+      "route": "/language"
+    },
+    {
+      "id": "settings",
+      "label": "Settings",
+      "icon": "settings",
+      "route": "/settings"
+    }
+  ]
+}

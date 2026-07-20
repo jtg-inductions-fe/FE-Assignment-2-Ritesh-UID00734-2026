@@ -1,0 +1,26 @@
+@use 'abstracts' as abstracts;
+
+.not-found {
+  max-width: abstracts.rem(700);
+  margin: 0 auto;
+  padding: abstracts.rem(48) abstracts.rem(24);
+  text-align: center;
+
+  &__hero {
+    margin-bottom: abstracts.rem(32);
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: abstracts.rem(1000);
+    }
+  }
+
+  &__title {
+    margin: 0 0 abstracts.rem(16);
+  }
+
+  &__description {
+    color: abstracts.$text-secondary;
+  }
+}

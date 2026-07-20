@@ -14,5 +14,5 @@ export const permissionGuard: CanActivateFn = (
     return true;
   }
 
-  return router.createUrlTree(['/unauthorized']);
+  return router.createUrlTree(['/404']);
 };

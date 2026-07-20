@@ -20,6 +20,12 @@
     "password": "owner123",
     "role": "owner",
     "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=RestaurantOwner",
-    "permissions": ["VIEW_DASHBOARD", "VIEW_ORDERS"]
+    "permissions": [
+      "VIEW_DASHBOARD",
+      "VIEW_ORDERS",
+      "VIEW_MENU",
+      "VIEW_BILLING_HISTORY",
+      "VIEW_INVENTORY"
+    ]
   }
 ]

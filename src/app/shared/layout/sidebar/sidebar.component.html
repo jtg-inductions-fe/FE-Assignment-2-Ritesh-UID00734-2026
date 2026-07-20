@@ -1,0 +1,25 @@
+<ng-container *ngIf="sidebarConfig$ | async as sidebar">
+  <div class="sidebar">
+    <mat-nav-list class="sidebar__navigation">
+      <app-sidebar-item *ngFor="let item of sidebar.primary" [item]="item">
+      </app-sidebar-item>
+
+      <mat-divider></mat-divider>
+
+      <app-sidebar-item *ngFor="let item of sidebar.secondary" [item]="item">
+      </app-sidebar-item>
+    </mat-nav-list>
+
+    <footer class="sidebar__footer">
+      <button
+        *ngFor="let item of sidebar.footer"
+        mat-icon-button
+        [routerLink]="item.route"
+        [attr.aria-label]="item.label">
+        <mat-icon>
+          {{ item.icon }}
+        </mat-icon>
+      </button>
+    </footer>
+  </div>
+</ng-container>

@@ -11,6 +11,12 @@
     padding-inline: abstracts.rem(16);
   }
 
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: abstracts.rem(12);
+  }
+
   &__logo {
     display: flex;
     align-items: center;
@@ -21,7 +27,6 @@
   }
 
   &__user-email {
-    margin: abstracts.rem(4) 0 0;
     color: abstracts.$text-secondary;
   }
 }

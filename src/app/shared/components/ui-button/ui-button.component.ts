@@ -22,6 +22,7 @@ export class UiButtonComponent {
   @Input() fullWidth = false;
   @Input() icon = '';
   @Input() iconPosition: 'left' | 'right' = 'left';
+  @Input() routerLink?: string;
   @Output() buttonClick = new EventEmitter<Event>();
 
   onClick(event: Event): void {
