@@ -1,0 +1,141 @@
+{
+  "all": [
+    {
+      "id": 1,
+      "name": "Chicken Biryani",
+      "orders": 1284
+    },
+    {
+      "id": 2,
+      "name": "Paneer Butter Masala",
+      "orders": 1126
+    },
+    {
+      "id": 3,
+      "name": "Veg Fried Rice",
+      "orders": 1043
+    },
+    {
+      "id": 4,
+      "name": "Margherita Pizza",
+      "orders": 958
+    },
+    {
+      "id": 5,
+      "name": "Classic Burger",
+      "orders": 887
+    }
+  ],
+
+  "1": [
+    {
+      "id": 1,
+      "name": "Chicken Biryani",
+      "orders": 468
+    },
+    {
+      "id": 2,
+      "name": "Paneer Butter Masala",
+      "orders": 421
+    },
+    {
+      "id": 3,
+      "name": "Veg Fried Rice",
+      "orders": 389
+    },
+    {
+      "id": 4,
+      "name": "Margherita Pizza",
+      "orders": 342
+    },
+    {
+      "id": 5,
+      "name": "Classic Burger",
+      "orders": 310
+    }
+  ],
+
+  "2": [
+    {
+      "id": 6,
+      "name": "Butter Chicken",
+      "orders": 452
+    },
+    {
+      "id": 7,
+      "name": "Tandoori Roti",
+      "orders": 398
+    },
+    {
+      "id": 8,
+      "name": "Dal Makhani",
+      "orders": 365
+    },
+    {
+      "id": 9,
+      "name": "Veg Pulao",
+      "orders": 336
+    },
+    {
+      "id": 10,
+      "name": "Chocolate Brownie",
+      "orders": 294
+    }
+  ],
+
+  "3": [
+    {
+      "id": 11,
+      "name": "Chicken Shawarma",
+      "orders": 521
+    },
+    {
+      "id": 12,
+      "name": "Grilled Sandwich",
+      "orders": 447
+    },
+    {
+      "id": 13,
+      "name": "French Fries",
+      "orders": 403
+    },
+    {
+      "id": 14,
+      "name": "Cold Coffee",
+      "orders": 362
+    },
+    {
+      "id": 15,
+      "name": "Caesar Salad",
+      "orders": 318
+    }
+  ],
+
+  "4": [
+    {
+      "id": 16,
+      "name": "Seafood Platter",
+      "orders": 476
+    },
+    {
+      "id": 17,
+      "name": "Fish Curry",
+      "orders": 429
+    },
+    {
+      "id": 18,
+      "name": "Prawn Biryani",
+      "orders": 388
+    },
+    {
+      "id": 19,
+      "name": "Lemon Mojito",
+      "orders": 354
+    },
+    {
+      "id": 20,
+      "name": "Mango Cheesecake",
+      "orders": 309
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+<mat-card class="kpi-card">
+  <div class="kpi-card__content">
+    <div class="kpi-card__details">
+      <p class="kpi-card__title mat-caption">
+        {{ kpi.title }}
+      </p>
+
+      <h2 class="kpi-card__value mat-headline-5">
+        {{ kpi.value }}
+      </h2>
+    </div>
+
+    <div class="kpi-card__icon" [style.background-color]="kpi.iconBackground">
+      <mat-icon [style.color]="kpi.iconColor">
+        {{ kpi.icon }}
+      </mat-icon>
+    </div>
+  </div>
+</mat-card>

@@ -9,6 +9,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { SidebarItemComponent } from './layout/sidebar-item/sidebar-item.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { SidebarItemComponent } from './layout/sidebar-item/sidebar-item.compone
     MainLayoutComponent,
     SidebarComponent,
     SidebarItemComponent,
+    FooterComponent,
   ],
   imports: [CommonModule, MaterialModule, ReactiveFormsModule, RouterModule],
   exports: [
@@ -27,6 +29,7 @@ import { SidebarItemComponent } from './layout/sidebar-item/sidebar-item.compone
     HeaderComponent,
     MainLayoutComponent,
     SidebarComponent,
+    FooterComponent,
   ],
 })
 export class SharedModule {}

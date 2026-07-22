@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "Downtown Restaurant"
+  },
+  {
+    "id": 2,
+    "name": "City Center Restaurant"
+  },
+  {
+    "id": 3,
+    "name": "Airport Restaurant"
+  },
+  {
+    "id": 4,
+    "name": "Beachside Restaurant"
+  }
+]

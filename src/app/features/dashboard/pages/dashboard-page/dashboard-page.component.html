@@ -1,26 +1,25 @@
-<h1>Welcome {{ currentUser?.name }}</h1>
-<p>
-  Role:
-  <strong>{{ currentUser?.role }}</strong>
-</p>
-<hr />
-<div *ngIf="permissionService.hasPermission(Permission.VIEW_DASHBOARD)">
-  <h2>Dashboard</h2>
-  <p>You have access to view the dashboard.</p>
-</div>
-<div *ngIf="permissionService.hasPermission(Permission.VIEW_RESTAURANTS)">
-  <h2>Restaurants</h2>
-  <p>You can view the list of restaurants.</p>
-</div>
-<div *ngIf="permissionService.hasPermission(Permission.CREATE_RESTAURANT)">
-  <h2>Create Restaurant</h2>
-  <p>You can create new restaurants.</p>
-</div>
-<div *ngIf="permissionService.hasPermission(Permission.EDIT_RESTAURANT)">
-  <h2>Edit Restaurant</h2>
-  <p>You can edit existing restaurants.</p>
-</div>
-<div *ngIf="permissionService.hasPermission(Permission.VIEW_ORDERS)">
-  <h2>Orders</h2>
-  <p>You can view restaurant orders.</p>
+<div class="dashboard-page">
+  <app-dashboard-header
+    [title]="'Overview Dashboard'"
+    [description]="'System administrator overview panel. Impersonate owners or view aggregate metrics.'"
+    [restaurants]="restaurants"
+    [selectedRestaurantId]="selectedRestaurantId"
+    [showRestaurantSelector]="currentUser?.role === 'admin'"
+    (restaurantChanged)="onRestaurantChange($event)">
+  </app-dashboard-header>
+
+  <app-dashboard-kpi-grid> </app-dashboard-kpi-grid>
+  <app-report-generator></app-report-generator>
+
+  <div class="dashboard-page__analytics">
+    <app-top-customers> </app-top-customers>
+
+    <app-top-selling-dishes> </app-top-selling-dishes>
+  </div>
+  <div
+    class="dashboard-page__live-orders"
+    *ngIf="permissionService.hasPermission(permission.VIEW_ORDERS)">
+    <app-live-orders> </app-live-orders>
+  </div>
+  <app-footer></app-footer>
 </div>

@@ -19,6 +19,7 @@
     "email": "owner@test.com",
     "password": "owner123",
     "role": "owner",
+    "restaurantId": 3,
     "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=RestaurantOwner",
     "permissions": [
       "VIEW_DASHBOARD",

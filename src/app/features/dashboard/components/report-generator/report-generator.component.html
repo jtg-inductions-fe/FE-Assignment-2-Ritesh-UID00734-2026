@@ -1,0 +1,27 @@
+<mat-card class="report-generator">
+  <div class="report-generator__content">
+    <div>
+      <h2 class="report-generator__title mat-subtitle-2">Report Generator</h2>
+
+      <p class="report-generator__description mat-caption">
+        Generate performance reports for the selected restaurant context.
+      </p>
+    </div>
+
+    <div class="report-generator__actions">
+      <app-ui-button
+        variant="stroked"
+        label="Top 10 Items"
+        icon="download"
+        [fullWidth]="true">
+      </app-ui-button>
+
+      <app-ui-button
+        variant="raised"
+        label="Frequently Bought Together"
+        icon="download"
+        [fullWidth]="true">
+      </app-ui-button>
+    </div>
+  </div>
+</mat-card>

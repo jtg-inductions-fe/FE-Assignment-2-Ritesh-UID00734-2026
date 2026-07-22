@@ -1,0 +1,21 @@
+<mat-card class="top-selling-dishes">
+  <h2 class="top-selling-dishes__title mat-headline-6">Top Selling Dishes</h2>
+
+  <ng-container *ngIf="dishes$ | async as dishes">
+    <div class="top-selling-dishes__list">
+      <div *ngFor="let dish of dishes; let last = last">
+        <div class="top-selling-dishes__row">
+          <span class="top-selling-dishes__name mat-subtitle-2">
+            {{ dish.name }}
+          </span>
+
+          <span class="top-selling-dishes__orders mat-caption">
+            {{ dish.orders }} Orders
+          </span>
+        </div>
+
+        <mat-divider *ngIf="!last"></mat-divider>
+      </div>
+    </div>
+  </ng-container>
+</mat-card>

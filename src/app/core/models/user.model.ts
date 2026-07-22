@@ -9,4 +9,5 @@ export interface User {
   role: Role;
   avatar: string;
   permissions: Permission[];
+  restaurantId?: number;
 }

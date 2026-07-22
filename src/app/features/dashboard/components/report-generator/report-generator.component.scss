@@ -1,0 +1,43 @@
+@use 'abstracts' as abstracts;
+
+.report-generator {
+  margin: abstracts.rem(10) 0;
+  padding-block: abstracts.rem(24);
+  padding-inline: abstracts.rem(16);
+  border-radius: abstracts.rem(10);
+  background-color: abstracts.$color-surface-secondary;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: abstracts.rem(20);
+
+    @include abstracts.respond-up(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__description {
+    margin: abstracts.rem(8) 0 0;
+    color: abstracts.$text-secondary;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: abstracts.rem(12);
+
+    button {
+      width: 100%;
+    }
+
+    @include abstracts.respond-up(tablet) {
+      flex-direction: row;
+      width: auto;
+    }
+  }
+}

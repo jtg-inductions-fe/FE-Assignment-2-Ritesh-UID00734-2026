@@ -1,0 +1,33 @@
+@use 'abstracts' as abstracts;
+
+.top-selling-dishes {
+  border-radius: abstracts.rem(10);
+  padding-inline: abstracts.rem(14);
+  padding-block: abstracts.rem(14);
+
+  &__list {
+    max-height: abstracts.rem(400);
+    overflow-y: scroll;
+    padding-inline: abstracts.rem(12);
+  }
+
+  &__title {
+    margin: abstracts.rem(18) abstracts.rem(12);
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: abstracts.rem(18) 0;
+  }
+
+  &__name {
+    font-weight: 500;
+  }
+
+  &__orders {
+    color: abstracts.$text-secondary;
+    font-weight: 600;
+  }
+}

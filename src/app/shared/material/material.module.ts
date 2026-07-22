@@ -12,6 +12,9 @@ import { MatListModule } from '@angular/material/list';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   exports: [
@@ -28,6 +31,9 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatListModule,
     MatSidenavModule,
     MatBadgeModule,
+    MatSelectModule,
+    MatAutocompleteModule,
+    MatChipsModule,
   ],
 })
 export class MaterialModule {}

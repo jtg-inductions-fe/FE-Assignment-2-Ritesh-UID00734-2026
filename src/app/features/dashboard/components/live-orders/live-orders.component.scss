@@ -1,0 +1,118 @@
+@use 'abstracts' as abstracts;
+
+.live-orders {
+  border-radius: abstracts.rem(10);
+  padding-inline: abstracts.rem(10);
+  padding-block: abstracts.rem(14);
+  margin-block: abstracts.rem(14);
+
+  &__header {
+    margin-bottom: abstracts.rem(24);
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__description {
+    margin-top: abstracts.rem(4);
+    color: abstracts.$text-secondary;
+  }
+
+  &__table {
+    display: flex;
+    flex-direction: column;
+    gap: abstracts.rem(16);
+    max-height: abstracts.rem(400);
+    overflow-y: scroll;
+
+    @include abstracts.respond-up(desktop) {
+      gap: 0;
+    }
+  }
+
+  &__table-header {
+    display: none;
+
+    @include abstracts.respond-up(desktop) {
+      display: grid;
+      grid-template-columns:
+        abstracts.rem(140)
+        abstracts.rem(220)
+        2fr
+        abstracts.rem(140)
+        abstracts.rem(140)
+        abstracts.rem(240);
+      align-items: center;
+      column-gap: abstracts.rem(24);
+      padding-bottom: abstracts.rem(16);
+      border-bottom: abstracts.rem(1) solid abstracts.$border-primary;
+      color: abstracts.$text-secondary;
+      text-transform: uppercase;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: abstracts.rem(16);
+    padding: abstracts.rem(20);
+    border: abstracts.rem(1) solid abstracts.$border-primary;
+    border-radius: abstracts.rem(12);
+    background: abstracts.$color-surface-base;
+
+    @include abstracts.respond-up(tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: abstracts.rem(18) abstracts.rem(24);
+      align-items: center;
+    }
+
+    @include abstracts.respond-up(desktop) {
+      display: grid;
+      grid-template-columns:
+        abstracts.rem(140)
+        abstracts.rem(220)
+        2fr
+        abstracts.rem(140)
+        abstracts.rem(140)
+        abstracts.rem(240);
+      column-gap: abstracts.rem(24);
+      padding: abstracts.rem(20) 0;
+      border: 0;
+      border-bottom: abstracts.rem(1) solid abstracts.$border-primary;
+      border-radius: 0;
+    }
+  }
+
+  &__order-id,
+  &__customer,
+  &__items,
+  &__amount {
+    word-break: break-word;
+  }
+
+  &__items {
+    color: abstracts.$text-secondary;
+  }
+
+  &__status {
+    width: fit-content;
+    padding-block: abstracts.rem(2);
+    border-radius: abstracts.rem(8);
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: abstracts.rem(10);
+
+    @include abstracts.respond-up(tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__actions-header {
+    text-align: right;
+  }
+}

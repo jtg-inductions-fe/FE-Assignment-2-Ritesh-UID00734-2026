@@ -1,0 +1,100 @@
+<mat-card class="live-orders">
+  <div class="live-orders__header">
+    <div>
+      <h2 class="live-orders__title mat-headline-6">Active Orders</h2>
+
+      <p class="live-orders__description mat-caption">
+        Manage pending and accepted orders directly from your dashboard.
+      </p>
+    </div>
+  </div>
+
+  <div class="live-orders__table">
+    <div class="live-orders__table-header">
+      <div class="mat-caption">Order ID</div>
+
+      <div class="mat-caption">Customer</div>
+
+      <div class="mat-caption">Items</div>
+
+      <div class="mat-caption">Amount</div>
+
+      <div class="mat-caption">Status</div>
+
+      <div class="mat-caption live-orders__actions-header">Actions</div>
+    </div>
+
+    <div class="live-orders__row" *ngFor="let order of liveOrders">
+      <div class="live-orders__order-id mat-subtitle-2">
+        #ORD-{{ order.id }}
+      </div>
+
+      <div class="live-orders__customer mat-body-1">
+        {{ order.customer }}
+      </div>
+
+      <div class="live-orders__items mat-caption">
+        {{ order.items.join(', ') }}
+      </div>
+
+      <div class="live-orders__amount mat-subtitle-2">
+        {{ order.amount | currency }}
+      </div>
+
+      <div>
+        <mat-chip
+          class="live-orders__status"
+          highlighted
+          [color]="isPending(order) ? 'accent' : 'primary'">
+          {{ order.status }}
+        </mat-chip>
+      </div>
+
+      <div class="live-orders__actions">
+        <ng-container *ngIf="isPending(order)">
+          <app-ui-button
+            variant="stroked"
+            color="primary"
+            label="Reject"
+            icon="close"
+            iconPosition="left"
+            [fullWidth]="true"
+            (buttonClick)="rejectOrder(order.id)">
+          </app-ui-button>
+
+          <app-ui-button
+            variant="flat"
+            color="primary"
+            label="Accept"
+            icon="check"
+            iconPosition="left"
+            [fullWidth]="true"
+            (buttonClick)="acceptOrder(order.id)">
+          </app-ui-button>
+        </ng-container>
+
+        <ng-container *ngIf="isPreparing(order)">
+          <app-ui-button
+            variant="stroked"
+            color="primary"
+            label="Reject"
+            icon="close"
+            iconPosition="left"
+            [fullWidth]="true"
+            (buttonClick)="rejectOrder(order.id)">
+          </app-ui-button>
+
+          <app-ui-button
+            variant="flat"
+            color="primary"
+            label="Complete"
+            icon="check"
+            iconPosition="left"
+            [fullWidth]="true"
+            (buttonClick)="completeOrder(order.id)">
+          </app-ui-button>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</mat-card>

@@ -1,0 +1,34 @@
+<mat-card class="top-customers">
+  <h2 class="top-customers__title mat-headline-6">Top Customers</h2>
+
+  <ng-container *ngIf="customers$ | async as customers">
+    <div class="top-customers__list">
+      <div *ngFor="let customer of customers; let last = last">
+        <div class="top-customers__customer">
+          <div class="top-customers__left">
+            <img
+              class="top-customers__avatar"
+              [src]="customer.avatar"
+              [alt]="customer.name" />
+
+            <div>
+              <div class="top-customers__name mat-subtitle-2">
+                {{ customer.name }}
+              </div>
+
+              <div class="top-customers__email mat-caption">
+                {{ customer.email }}
+              </div>
+            </div>
+          </div>
+
+          <div class="top-customers__amount mat-subtitle-2">
+            {{ customer.totalSpent | currency }}
+          </div>
+        </div>
+
+        <mat-divider *ngIf="!last"></mat-divider>
+      </div>
+    </div>
+  </ng-container>
+</mat-card>
