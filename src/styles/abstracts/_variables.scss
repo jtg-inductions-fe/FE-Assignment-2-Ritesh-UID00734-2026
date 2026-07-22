@@ -1,0 +1,10 @@
+@use 'functions' as fn;
+
+$color-surface-base: #ffffff;
+
+$breakpoints-up: (
+  mobile: 320px,
+  tablet: 768px,
+  small-desktop: 1024px,
+  desktop: 1440px,
+);

@@ -1,0 +1,58 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use 'abstracts' as abstracts;
+
+$material-typography: mat.define-typography-config(
+  $font-family: '"Inter", sans-serif',
+
+  $headline-1: mat.define-typography-level(
+      $font-size: abstracts.rem(48),
+      $line-height: abstracts.rem(62),
+      $font-weight: 700,
+    ),
+  $headline-5: mat.define-typography-level(
+      $font-size: abstracts.rem(20),
+      $line-height: abstracts.rem(30),
+      $font-weight: 700,
+    ),
+  $headline-6: mat.define-typography-level(
+      $font-size: abstracts.rem(20),
+      $line-height: abstracts.rem(30),
+      $font-weight: 600,
+    ),
+  $subtitle-1: mat.define-typography-level(
+      $font-size: abstracts.rem(16),
+      $line-height: abstracts.rem(24),
+      $font-weight: 500,
+    ),
+  $subtitle-2: mat.define-typography-level(
+      $font-size: abstracts.rem(16),
+      $line-height: abstracts.rem(24),
+      $font-weight: 700,
+    ),
+  $body-1: mat.define-typography-level(
+      $font-size: abstracts.rem(14),
+      $line-height: abstracts.rem(20.13),
+      $font-weight: 500,
+    ),
+  $body-2: mat.define-typography-level(
+      $font-size: abstracts.rem(13),
+      $line-height: abstracts.rem(18),
+      $font-weight: 600,
+    ),
+  $caption: mat.define-typography-level(
+      $font-size: abstracts.rem(12),
+      $line-height: abstracts.rem(20),
+      $font-weight: 500,
+    ),
+  $button: mat.define-typography-level(
+      $font-size: abstracts.rem(14),
+      $line-height: abstracts.rem(21),
+      $font-weight: 600,
+    ),
+  $overline: mat.define-typography-level(
+      $font-size: abstracts.rem(12),
+      $line-height: abstracts.rem(18),
+      $font-weight: 700,
+    ),
+);
