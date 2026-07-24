@@ -17,24 +17,12 @@ import { Restaurant } from '@core/models/restaurant.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardHeaderComponent implements OnChanges {
-  @Input()
-  title = '';
-
-  @Input()
-  description = '';
-
-  @Input()
-  restaurants: Restaurant[] = [];
-
-  @Input()
-  selectedRestaurantId: number | 'all' = 'all';
-
-  @Input()
-  showRestaurantSelector = false;
-
-  @Output()
-  restaurantChanged = new EventEmitter<number | 'all'>();
-
+  @Input() title = '';
+  @Input() description = '';
+  @Input() restaurants: Restaurant[] = [];
+  @Input() selectedRestaurantId: number | 'all' = 'all';
+  @Input() showRestaurantSelector = false;
+  @Output() restaurantChanged = new EventEmitter<number | 'all'>();
   searchText = '';
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -62,13 +50,11 @@ export class DashboardHeaderComponent implements OnChanges {
     if (!isUserInput) {
       return;
     }
-
     if (restaurant === 'all') {
       this.searchText = 'All Restaurants';
       this.restaurantChanged.emit('all');
       return;
     }
-
     this.searchText = restaurant.name;
     this.restaurantChanged.emit(restaurant.id);
   }
@@ -77,11 +63,9 @@ export class DashboardHeaderComponent implements OnChanges {
     if (!restaurant) {
       return '';
     }
-
     if (typeof restaurant === 'string') {
       return restaurant;
     }
-
     return restaurant.name;
   };
 
@@ -90,11 +74,9 @@ export class DashboardHeaderComponent implements OnChanges {
       this.searchText = 'All Restaurants';
       return;
     }
-
     const restaurant = this.restaurants.find(
       restaurant => restaurant.id === this.selectedRestaurantId
     );
-
     this.searchText = restaurant?.name ?? '';
   }
 }

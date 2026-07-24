@@ -21,7 +21,7 @@ interface RestaurantData<T> {
   providedIn: 'root',
 })
 export class DashboardService {
-  private readonly BASE_URL = 'assets/data/dashboard';
+  private readonly BASE_URL = 'assets/data';
 
   constructor(private readonly http: HttpClient) {}
 

@@ -1,4 +1,4 @@
-import { Permission } from '@core/authorization/permission.enum';
+import { Permission } from '@app/core/authorization/permission.model';
 
 export interface SidebarItem {
   id: string;

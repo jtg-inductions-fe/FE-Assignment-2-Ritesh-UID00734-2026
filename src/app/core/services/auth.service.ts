@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import { BehaviorSubject, Observable, map, tap } from 'rxjs';
+
 import { LoginRequest } from '@core/models/login-request.model';
 import { User } from '@core/models/user.model';
 import { StorageService } from '@core/services/storage.service';
@@ -10,11 +12,9 @@ import { StorageService } from '@core/services/storage.service';
 })
 export class AuthService {
   private readonly USERS_URL = '/assets/data/users.json';
-
   private readonly currentUserSubject = new BehaviorSubject<User | null>(
     this.storageService.getUser()
   );
-
   readonly currentUser$ = this.currentUserSubject.asObservable();
 
   constructor(

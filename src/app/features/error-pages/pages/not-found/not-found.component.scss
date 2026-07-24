@@ -8,12 +8,13 @@
 
   &__hero {
     margin-bottom: abstracts.rem(32);
+  }
 
-    img {
-      display: block;
-      width: 100%;
-      max-width: abstracts.rem(1000);
-    }
+  &__image {
+    display: block;
+    width: 100%;
+    max-width: abstracts.rem(1000);
+    margin-inline: auto;
   }
 
   &__title {
@@ -21,6 +22,7 @@
   }
 
   &__description {
+    margin-bottom: abstracts.rem(32);
     color: abstracts.$text-secondary;
   }
 }

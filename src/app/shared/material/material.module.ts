@@ -15,6 +15,9 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatSelectModule } from '@angular/material/select';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatTableModule } from '@angular/material/table';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   exports: [
@@ -34,6 +37,9 @@ import { MatChipsModule } from '@angular/material/chips';
     MatSelectModule,
     MatAutocompleteModule,
     MatChipsModule,
+    MatTableModule,
+    MatTooltipModule,
+    MatProgressSpinnerModule,
   ],
 })
 export class MaterialModule {}

@@ -5,4 +5,5 @@ export interface DashboardKpi {
   icon: string;
   iconColor: string;
   iconBackground: string;
+  pipe?: 'currency' | 'number';
 }

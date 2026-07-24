@@ -9,8 +9,7 @@
   padding: abstracts.rem(20);
   border: abstracts.rem(1) solid abstracts.$border-primary;
   border-radius: abstracts.rem(12);
-  margin-bottom: abstracts.rem(10);
-  background-color: abstracts.$color-surface-secondary;
+  margin-block: abstracts.rem(10);
 
   @include abstracts.respond-up(tablet) {
     flex-direction: row;
@@ -29,5 +28,11 @@
     display: flex;
     align-items: center;
     gap: abstracts.rem(8);
+  }
+
+  &__icon {
+    display: block;
+    width: abstracts.rem(20);
+    height: abstracts.rem(20);
   }
 }

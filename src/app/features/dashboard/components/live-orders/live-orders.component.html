@@ -9,92 +9,105 @@
     </div>
   </div>
 
-  <div class="live-orders__table">
-    <div class="live-orders__table-header">
-      <div class="mat-caption">Order ID</div>
-
-      <div class="mat-caption">Customer</div>
-
-      <div class="mat-caption">Items</div>
-
-      <div class="mat-caption">Amount</div>
-
-      <div class="mat-caption">Status</div>
-
-      <div class="mat-caption live-orders__actions-header">Actions</div>
-    </div>
-
-    <div class="live-orders__row" *ngFor="let order of liveOrders">
-      <div class="live-orders__order-id mat-subtitle-2">
-        #ORD-{{ order.id }}
-      </div>
-
-      <div class="live-orders__customer mat-body-1">
-        {{ order.customer }}
-      </div>
-
-      <div class="live-orders__items mat-caption">
-        {{ order.items.join(', ') }}
-      </div>
-
-      <div class="live-orders__amount mat-subtitle-2">
-        {{ order.amount | currency }}
-      </div>
-
-      <div>
-        <mat-chip
-          class="live-orders__status"
-          highlighted
-          [color]="isPending(order) ? 'accent' : 'primary'">
-          {{ order.status }}
-        </mat-chip>
-      </div>
-
-      <div class="live-orders__actions">
-        <ng-container *ngIf="isPending(order)">
-          <app-ui-button
-            variant="stroked"
-            color="primary"
-            label="Reject"
-            icon="close"
-            iconPosition="left"
-            [fullWidth]="true"
-            (buttonClick)="rejectOrder(order.id)">
-          </app-ui-button>
-
-          <app-ui-button
-            variant="flat"
-            color="primary"
-            label="Accept"
-            icon="check"
-            iconPosition="left"
-            [fullWidth]="true"
-            (buttonClick)="acceptOrder(order.id)">
-          </app-ui-button>
-        </ng-container>
-
-        <ng-container *ngIf="isPreparing(order)">
-          <app-ui-button
-            variant="stroked"
-            color="primary"
-            label="Reject"
-            icon="close"
-            iconPosition="left"
-            [fullWidth]="true"
-            (buttonClick)="rejectOrder(order.id)">
-          </app-ui-button>
-
-          <app-ui-button
-            variant="flat"
-            color="primary"
-            label="Complete"
-            icon="check"
-            iconPosition="left"
-            [fullWidth]="true"
-            (buttonClick)="completeOrder(order.id)">
-          </app-ui-button>
-        </ng-container>
-      </div>
-    </div>
+  <div *ngIf="loading" class="live-orders__loading">
+    <mat-progress-spinner mode="indeterminate" diameter="40">
+    </mat-progress-spinner>
   </div>
+
+  <ng-container *ngIf="!loading">
+    <div *ngIf="error" class="live-orders__error">
+      <mat-icon>error_outline</mat-icon>
+
+      <p class="mat-subtitle-2">Failed to load active orders.</p>
+
+      <p class="mat-caption">Please try again later.</p>
+    </div>
+
+    <ng-container *ngIf="!error">
+      <div
+        *ngIf="liveOrders.length; else emptyState"
+        class="live-orders__table">
+        <div class="live-orders__table-header">
+          <div class="mat-caption">ORDER ID</div>
+
+          <div class="mat-caption">CUSTOMER</div>
+
+          <div class="mat-caption">ITEMS</div>
+
+          <div class="mat-caption">AMOUNT</div>
+
+          <div class="mat-caption">STATUS</div>
+
+          <div class="mat-caption live-orders__actions-header">ACTIONS</div>
+        </div>
+
+        <div class="live-orders__row" *ngFor="let order of liveOrders">
+          <div class="live-orders__order-id mat-subtitle-2">
+            #ORD-{{ order.id }}
+          </div>
+
+          <div class="live-orders__customer mat-body-1">
+            {{ order.customer }}
+          </div>
+
+          <div class="live-orders__items mat-caption">
+            {{ order.items.join(', ') }}
+          </div>
+
+          <div class="live-orders__amount mat-subtitle-2">
+            {{ order.amount | currency }}
+          </div>
+
+          <div
+            class="live-orders__status mat-caption"
+            [ngClass]="{
+              'live-orders__status--pending': isPending(order),
+              'live-orders__status--preparing': isPreparing(order),
+            }">
+            {{ order.status }}
+          </div>
+
+          <div class="live-orders__actions">
+            <app-ui-button
+              variant="stroked"
+              color="primary"
+              label="Reject"
+              icon="close"
+              iconPosition="left"
+              [fullWidth]="true"
+              (buttonClick)="rejectOrder(order.id)">
+            </app-ui-button>
+
+            <app-ui-button
+              *ngIf="isPending(order)"
+              variant="flat"
+              color="primary"
+              label="Accept"
+              icon="check"
+              iconPosition="left"
+              [fullWidth]="true"
+              (buttonClick)="acceptOrder(order.id)">
+            </app-ui-button>
+
+            <app-ui-button
+              *ngIf="isPreparing(order)"
+              variant="flat"
+              color="primary"
+              label="Complete"
+              icon="check"
+              iconPosition="left"
+              [fullWidth]="true"
+              (buttonClick)="completeOrder(order.id)">
+            </app-ui-button>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #emptyState>
+        <div class="live-orders__empty">
+          <p class="mat-caption">No active orders.</p>
+        </div>
+      </ng-template>
+    </ng-container>
+  </ng-container>
 </mat-card>

@@ -1,0 +1,58 @@
+<div class="restaurant-list">
+  <div class="restaurant-list__header">
+    <div>
+      <h1 class="restaurant-list__title mat-headline-1">
+        Restaurant Management
+      </h1>
+
+      <p class="restaurant-list__description mat-body-1">
+        Manage partner restaurants and ownership list.
+      </p>
+    </div>
+
+    <app-ui-button
+      label="ADD RESTAURANT"
+      icon="add"
+      routerLink="/restaurant/add">
+    </app-ui-button>
+  </div>
+
+  <mat-card class="restaurant-list__card">
+    <div class="restaurant-list__table-header">
+      <div class="mat-caption">RESTAURANT NAME</div>
+
+      <div class="mat-caption">ADDRESS</div>
+
+      <div class="mat-caption">OWNERS</div>
+
+      <div class="mat-caption restaurant-list__actions-header">ACTIONS</div>
+    </div>
+
+    <div class="restaurant-list__row" *ngFor="let restaurant of restaurants">
+      <div class="restaurant-list__name mat-subtitle-2">
+        {{ restaurant.name }}
+      </div>
+
+      <div class="restaurant-list__address mat-body-1">
+        {{ restaurant.address }}
+      </div>
+
+      <div class="restaurant-list__owners">
+        <mat-chip
+          *ngFor="let owner of restaurant.owners"
+          class="restaurant-list__owner">
+          {{ owner }}
+        </mat-chip>
+      </div>
+
+      <div class="restaurant-list__actions">
+        <app-ui-button
+          variant="stroked"
+          icon="edit"
+          label="Edit"
+          [routerLink]="'/restaurant/' + restaurant.id + '/edit'">
+        </app-ui-button>
+      </div>
+    </div>
+  </mat-card>
+</div>

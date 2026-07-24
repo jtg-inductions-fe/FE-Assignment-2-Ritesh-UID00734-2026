@@ -12,7 +12,6 @@ import { SidebarItem } from '@core/models/sidebar-item.model';
 export class SidebarItemComponent {
   @Input({ required: true })
   item!: SidebarItem;
-
   expanded = false;
 
   constructor(

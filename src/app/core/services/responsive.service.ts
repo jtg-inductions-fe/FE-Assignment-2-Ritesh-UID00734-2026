@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
+
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ResponsiveService {
   readonly isMobile$: Observable<boolean>;
-
   private mobile = false;
 
   constructor(private readonly breakpointObserver: BreakpointObserver) {

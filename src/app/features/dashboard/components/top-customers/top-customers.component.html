@@ -1,34 +1,53 @@
-<mat-card class="top-customers">
-  <h2 class="top-customers__title mat-headline-6">Top Customers</h2>
+<app-list-card title="Top Customers">
+  <div *ngIf="loading" class="top-customers__loading">
+    <mat-progress-spinner mode="indeterminate" diameter="40">
+    </mat-progress-spinner>
+  </div>
 
-  <ng-container *ngIf="customers$ | async as customers">
-    <div class="top-customers__list">
-      <div *ngFor="let customer of customers; let last = last">
-        <div class="top-customers__customer">
-          <div class="top-customers__left">
-            <img
-              class="top-customers__avatar"
-              [src]="customer.avatar"
-              [alt]="customer.name" />
+  <ng-container *ngIf="!loading">
+    <div *ngIf="error" class="top-customers__error">
+      <mat-icon>error_outline</mat-icon>
 
-            <div>
-              <div class="top-customers__name mat-subtitle-2">
-                {{ customer.name }}
+      <p class="mat-subtitle-2">Failed to load top customers.</p>
+
+      <p class="mat-caption">Please try again later.</p>
+    </div>
+
+    <ng-container *ngIf="!error">
+      <div
+        *ngIf="customers.length; else emptyState"
+        class="top-customers__list">
+        <div *ngFor="let customer of customers; let last = last">
+          <div class="top-customers__customer">
+            <div class="top-customers__left">
+              <img
+                class="top-customers__avatar"
+                [src]="customer.avatar"
+                [alt]="customer.name" />
+
+              <div>
+                <div class="top-customers__name mat-subtitle-2">
+                  {{ customer.name }}
+                </div>
+
+                <div class="top-customers__email mat-caption">
+                  {{ customer.email }}
+                </div>
               </div>
+            </div>
 
-              <div class="top-customers__email mat-caption">
-                {{ customer.email }}
-              </div>
+            <div class="top-customers__amount mat-subtitle-1">
+              {{ customer.totalSpent | currency }}
             </div>
           </div>
 
-          <div class="top-customers__amount mat-subtitle-2">
-            {{ customer.totalSpent | currency }}
-          </div>
+          <mat-divider *ngIf="!last"></mat-divider>
         </div>
-
-        <mat-divider *ngIf="!last"></mat-divider>
       </div>
-    </div>
+
+      <ng-template #emptyState>
+        <p class="top-customers__empty mat-caption">No Top Customers.</p>
+      </ng-template>
+    </ng-container>
   </ng-container>
-</mat-card>
+</app-list-card>

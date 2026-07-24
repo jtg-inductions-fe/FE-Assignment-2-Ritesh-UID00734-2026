@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { StorageService } from '@core/services/storage.service';
-import { Permission } from './permission.enum';
+import { Permission } from './permission.model';
 
 @Injectable({
   providedIn: 'root',

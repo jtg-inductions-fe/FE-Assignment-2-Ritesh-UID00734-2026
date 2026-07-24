@@ -1,0 +1,47 @@
+@use 'abstracts' as abstracts;
+
+.restaurant-form {
+  display: flex;
+  flex-direction: column;
+  gap: abstracts.rem(24);
+  padding-inline: abstracts.rem(16);
+  padding-block: abstracts.rem(20);
+
+  &__back {
+    align-self: flex-start;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: abstracts.rem(4);
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__description {
+    color: abstracts.$text-secondary;
+  }
+
+  &__card {
+    padding: abstracts.rem(24);
+    border-radius: abstracts.rem(10);
+  }
+
+  &__field:not(:last-child) {
+    margin-bottom: abstracts.rem(20);
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: abstracts.rem(16);
+    margin-top: abstracts.rem(24);
+  }
+
+  &__full-width {
+    width: 100%;
+  }
+}

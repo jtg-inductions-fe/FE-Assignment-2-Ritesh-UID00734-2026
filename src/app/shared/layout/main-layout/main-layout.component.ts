@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+
 import { MatDrawerMode } from '@angular/material/sidenav';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -12,11 +13,8 @@ import { SidebarService } from '@core/services/sidebar.service';
 })
 export class MainLayoutComponent implements OnInit, OnDestroy {
   mode: MatDrawerMode = 'side';
-
   opened = true;
-
   isMobile = false;
-
   private readonly destroy$ = new Subject<void>();
 
   constructor(

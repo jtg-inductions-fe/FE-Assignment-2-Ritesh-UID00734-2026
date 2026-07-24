@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { authGuard } from '@core/guards/auth.guard';
+import { loginGuard } from '@core/guards/login.guard';
 import { MainLayoutComponent } from '@shared/layout/main-layout/main-layout.component';
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
 
   {
     path: 'login',
+    canActivate: [loginGuard],
     loadChildren: () =>
       import('@features/auth/auth.module').then(m => m.AuthModule),
   },

@@ -1,0 +1,17 @@
+@use 'abstracts' as abstracts;
+
+.list-card {
+  border-radius: abstracts.rem(10);
+  padding-inline: abstracts.rem(14);
+  padding-block: abstracts.rem(14);
+
+  &__title {
+    margin: abstracts.rem(16);
+  }
+
+  &__content {
+    height: abstracts.rem(400);
+    overflow-y: auto;
+    padding-inline: abstracts.rem(12);
+  }
+}

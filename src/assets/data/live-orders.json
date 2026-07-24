@@ -1,0 +1,432 @@
+{
+  "all": [
+    {
+      "id": 1001,
+      "customer": "John Anderson",
+      "items": ["Chicken Biryani", "Cold Drink"],
+      "amount": 640,
+      "status": "Pending"
+    },
+    {
+      "id": 1002,
+      "customer": "Sarah Williams",
+      "items": ["Paneer Butter Masala", "Butter Naan"],
+      "amount": 580,
+      "status": "Preparing"
+    },
+    {
+      "id": 1003,
+      "customer": "David Miller",
+      "items": ["Veg Fried Rice"],
+      "amount": 320,
+      "status": "Preparing"
+    },
+    {
+      "id": 1004,
+      "customer": "Emily Johnson",
+      "items": ["Classic Burger", "French Fries", "Coke"],
+      "amount": 510,
+      "status": "Pending"
+    },
+    {
+      "id": 1005,
+      "customer": "Michael Brown",
+      "items": ["Margherita Pizza"],
+      "amount": 450,
+      "status": "Preparing"
+    },
+    {
+      "id": 1006,
+      "customer": "Olivia Wilson",
+      "items": ["Seafood Platter"],
+      "amount": 890,
+      "status": "Preparing"
+    },
+    {
+      "id": 1007,
+      "customer": "Rahul Verma",
+      "items": ["Butter Chicken", "Garlic Naan"],
+      "amount": 720,
+      "status": "Pending"
+    },
+    {
+      "id": 1008,
+      "customer": "Priya Sharma",
+      "items": ["Dal Makhani", "Jeera Rice"],
+      "amount": 490,
+      "status": "Preparing"
+    },
+    {
+      "id": 1009,
+      "customer": "Amit Singh",
+      "items": ["Chicken Shawarma", "Cold Coffee"],
+      "amount": 540,
+      "status": "Preparing"
+    },
+    {
+      "id": 1010,
+      "customer": "Emma Clark",
+      "items": ["Lemon Mojito", "French Fries"],
+      "amount": 420,
+      "status": "Pending"
+    },
+    {
+      "id": 1011,
+      "customer": "Sophia Davis",
+      "items": ["Mango Cheesecake"],
+      "amount": 310,
+      "status": "Preparing"
+    },
+    {
+      "id": 1012,
+      "customer": "Liam Taylor",
+      "items": ["Fish Curry", "Steamed Rice"],
+      "amount": 760,
+      "status": "Preparing"
+    },
+    {
+      "id": 1013,
+      "customer": "Sneha Kapoor",
+      "items": ["Chocolate Brownie"],
+      "amount": 260,
+      "status": "Pending"
+    },
+    {
+      "id": 1014,
+      "customer": "Arjun Mehta",
+      "items": ["Veg Pulao", "Raita"],
+      "amount": 410,
+      "status": "Preparing"
+    },
+    {
+      "id": 1015,
+      "customer": "Neha Joshi",
+      "items": ["Grilled Sandwich"],
+      "amount": 340,
+      "status": "Preparing"
+    },
+    {
+      "id": 1016,
+      "customer": "Karan Malhotra",
+      "items": ["French Fries", "Coke"],
+      "amount": 280,
+      "status": "Pending"
+    },
+    {
+      "id": 1017,
+      "customer": "Pooja Nair",
+      "items": ["Caesar Salad"],
+      "amount": 350,
+      "status": "Preparing"
+    },
+    {
+      "id": 1018,
+      "customer": "Noah Martin",
+      "items": ["Pepperoni Pizza"],
+      "amount": 610,
+      "status": "Preparing"
+    },
+    {
+      "id": 1019,
+      "customer": "Isabella Moore",
+      "items": ["Pasta Alfredo", "Garlic Bread"],
+      "amount": 690,
+      "status": "Pending"
+    },
+    {
+      "id": 1020,
+      "customer": "Lucas Thomas",
+      "items": ["Chicken Wings", "Sprite"],
+      "amount": 560,
+      "status": "Preparing"
+    }
+  ],
+  "1": [
+    {
+      "id": 1101,
+      "customer": "John Anderson",
+      "items": ["Chicken Biryani", "Cold Drink"],
+      "amount": 640,
+      "status": "Pending"
+    },
+    {
+      "id": 1102,
+      "customer": "Sarah Williams",
+      "items": ["Paneer Butter Masala", "Butter Naan"],
+      "amount": 580,
+      "status": "Preparing"
+    },
+    {
+      "id": 1103,
+      "customer": "David Miller",
+      "items": ["Veg Fried Rice"],
+      "amount": 320,
+      "status": "Preparing"
+    },
+    {
+      "id": 1104,
+      "customer": "Emily Johnson",
+      "items": ["Classic Burger", "French Fries"],
+      "amount": 510,
+      "status": "Pending"
+    },
+    {
+      "id": 1105,
+      "customer": "Michael Brown",
+      "items": ["Margherita Pizza"],
+      "amount": 450,
+      "status": "Preparing"
+    },
+    {
+      "id": 1106,
+      "customer": "Daniel Scott",
+      "items": ["Chicken Tikka"],
+      "amount": 530,
+      "status": "Preparing"
+    },
+    {
+      "id": 1107,
+      "customer": "Sophia Green",
+      "items": ["Veg Burger", "Fries"],
+      "amount": 420,
+      "status": "Pending"
+    },
+    {
+      "id": 1108,
+      "customer": "James Hall",
+      "items": ["Pasta Arrabbiata"],
+      "amount": 490,
+      "status": "Preparing"
+    },
+    {
+      "id": 1109,
+      "customer": "Emma White",
+      "items": ["Pizza", "Garlic Bread"],
+      "amount": 760,
+      "status": "Preparing"
+    },
+    {
+      "id": 1110,
+      "customer": "Noah Walker",
+      "items": ["Chicken Wrap"],
+      "amount": 380,
+      "status": "Pending"
+    }
+  ],
+  "2": [
+    {
+      "id": 2101,
+      "customer": "Priya Sharma",
+      "items": ["Butter Chicken", "Garlic Naan"],
+      "amount": 720,
+      "status": "Preparing"
+    },
+    {
+      "id": 2102,
+      "customer": "Rahul Verma",
+      "items": ["Dal Makhani", "Jeera Rice"],
+      "amount": 490,
+      "status": "Pending"
+    },
+    {
+      "id": 2103,
+      "customer": "Sneha Kapoor",
+      "items": ["Chocolate Brownie"],
+      "amount": 260,
+      "status": "Preparing"
+    },
+    {
+      "id": 2104,
+      "customer": "Arjun Mehta",
+      "items": ["Veg Pulao", "Raita"],
+      "amount": 410,
+      "status": "Preparing"
+    },
+    {
+      "id": 2105,
+      "customer": "Riya Patel",
+      "items": ["Paneer Tikka"],
+      "amount": 470,
+      "status": "Pending"
+    },
+    {
+      "id": 2106,
+      "customer": "Ankit Jain",
+      "items": ["Chicken Curry"],
+      "amount": 610,
+      "status": "Preparing"
+    },
+    {
+      "id": 2107,
+      "customer": "Meera Shah",
+      "items": ["Veg Thali"],
+      "amount": 390,
+      "status": "Preparing"
+    },
+    {
+      "id": 2108,
+      "customer": "Vikas Rao",
+      "items": ["Masala Dosa"],
+      "amount": 250,
+      "status": "Pending"
+    },
+    {
+      "id": 2109,
+      "customer": "Nisha Gupta",
+      "items": ["Hakka Noodles"],
+      "amount": 430,
+      "status": "Preparing"
+    },
+    {
+      "id": 2110,
+      "customer": "Harsh Singh",
+      "items": ["Chicken Fried Rice"],
+      "amount": 520,
+      "status": "Preparing"
+    }
+  ],
+  "3": [
+    {
+      "id": 3101,
+      "customer": "Amit Singh",
+      "items": ["Chicken Shawarma"],
+      "amount": 390,
+      "status": "Preparing"
+    },
+    {
+      "id": 3102,
+      "customer": "Neha Joshi",
+      "items": ["Grilled Sandwich", "Cold Coffee"],
+      "amount": 540,
+      "status": "Pending"
+    },
+    {
+      "id": 3103,
+      "customer": "Karan Malhotra",
+      "items": ["French Fries"],
+      "amount": 210,
+      "status": "Preparing"
+    },
+    {
+      "id": 3104,
+      "customer": "Pooja Nair",
+      "items": ["Caesar Salad"],
+      "amount": 340,
+      "status": "Preparing"
+    },
+    {
+      "id": 3105,
+      "customer": "Rohit Gupta",
+      "items": ["Club Sandwich"],
+      "amount": 460,
+      "status": "Pending"
+    },
+    {
+      "id": 3106,
+      "customer": "Anjali Desai",
+      "items": ["Pasta Alfredo"],
+      "amount": 610,
+      "status": "Preparing"
+    },
+    {
+      "id": 3107,
+      "customer": "Deepak Kumar",
+      "items": ["Chicken Burger"],
+      "amount": 480,
+      "status": "Preparing"
+    },
+    {
+      "id": 3108,
+      "customer": "Sakshi Arora",
+      "items": ["Mojito", "Nachos"],
+      "amount": 360,
+      "status": "Pending"
+    },
+    {
+      "id": 3109,
+      "customer": "Yash Mehta",
+      "items": ["Veg Pizza"],
+      "amount": 550,
+      "status": "Preparing"
+    },
+    {
+      "id": 3110,
+      "customer": "Tanvi Kapoor",
+      "items": ["Cheese Garlic Bread"],
+      "amount": 290,
+      "status": "Preparing"
+    }
+  ],
+  "4": [
+    {
+      "id": 4101,
+      "customer": "Olivia Wilson",
+      "items": ["Seafood Platter"],
+      "amount": 890,
+      "status": "Preparing"
+    },
+    {
+      "id": 4102,
+      "customer": "Liam Taylor",
+      "items": ["Fish Curry", "Steamed Rice"],
+      "amount": 760,
+      "status": "Pending"
+    },
+    {
+      "id": 4103,
+      "customer": "Sophia Davis",
+      "items": ["Mango Cheesecake"],
+      "amount": 310,
+      "status": "Preparing"
+    },
+    {
+      "id": 4104,
+      "customer": "Emma Clark",
+      "items": ["Lemon Mojito", "French Fries"],
+      "amount": 420,
+      "status": "Preparing"
+    },
+    {
+      "id": 4105,
+      "customer": "Noah Martin",
+      "items": ["Grilled Fish"],
+      "amount": 790,
+      "status": "Pending"
+    },
+    {
+      "id": 4106,
+      "customer": "Lucas Thomas",
+      "items": ["Prawn Biryani"],
+      "amount": 870,
+      "status": "Preparing"
+    },
+    {
+      "id": 4107,
+      "customer": "Grace Lee",
+      "items": ["Fish Fingers"],
+      "amount": 520,
+      "status": "Preparing"
+    },
+    {
+      "id": 4108,
+      "customer": "Henry Adams",
+      "items": ["Crab Curry"],
+      "amount": 910,
+      "status": "Pending"
+    },
+    {
+      "id": 4109,
+      "customer": "Mia Harris",
+      "items": ["Seafood Pasta"],
+      "amount": 740,
+      "status": "Preparing"
+    },
+    {
+      "id": 4110,
+      "customer": "Ethan Lewis",
+      "items": ["Grilled Prawns"],
+      "amount": 810,
+      "status": "Preparing"
+    }
+  ]
+}

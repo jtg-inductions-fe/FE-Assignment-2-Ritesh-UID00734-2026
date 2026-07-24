@@ -1,50 +1,63 @@
 @use 'abstracts' as abstracts;
 
 .top-customers {
-  border-radius: abstracts.rem(10);
-  padding-inline: abstracts.rem(14);
-  padding-block: abstracts.rem(14);
-
-  &__list {
-    max-height: abstracts.rem(400);
-    overflow-y: scroll;
-    padding-inline: abstracts.rem(12);
+  &__loading,
+  &__error,
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   }
 
-  &__title {
-    margin: abstracts.rem(10) abstracts.rem(24);
+  &__list {
+    display: flex;
+    flex-direction: column;
   }
 
   &__customer {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: abstracts.rem(12);
     padding: abstracts.rem(16) 0;
+
+    @include abstracts.respond-up(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__left {
     display: flex;
     align-items: center;
     gap: abstracts.rem(16);
+    width: 100%;
   }
 
   &__avatar {
     width: abstracts.rem(48);
     height: abstracts.rem(48);
     border-radius: 50%;
-    object-fit: cover;
-  }
-
-  &__name {
-    font-weight: 600;
   }
 
   &__email {
+    display: none;
     color: abstracts.$text-secondary;
     font-size: abstracts.rem(14);
+
+    @include abstracts.respond-up(tablet) {
+      display: block;
+    }
   }
 
   &__amount {
-    font-weight: 600;
+    align-self: flex-start;
+
+    @include abstracts.respond-up(tablet) {
+      align-self: center;
+    }
   }
 }

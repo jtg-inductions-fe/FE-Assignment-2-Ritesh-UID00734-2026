@@ -4,11 +4,14 @@
     [description]="'System administrator overview panel. Impersonate owners or view aggregate metrics.'"
     [restaurants]="restaurants"
     [selectedRestaurantId]="selectedRestaurantId"
-    [showRestaurantSelector]="currentUser?.role === 'admin'"
+    [showRestaurantSelector]="
+      permissionService.hasPermission(permission.VIEW_RESTAURANTS)
+    "
     (restaurantChanged)="onRestaurantChange($event)">
   </app-dashboard-header>
 
   <app-dashboard-kpi-grid> </app-dashboard-kpi-grid>
+
   <app-report-generator></app-report-generator>
 
   <div class="dashboard-page__analytics">

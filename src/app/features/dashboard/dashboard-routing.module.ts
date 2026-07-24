@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Permission } from '@core/authorization/permission.enum';
+
+import { Permission } from '@app/core/authorization/permission.model';
 import { permissionGuard } from '@core/authorization/permission.guard';
 
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';

@@ -5,7 +5,7 @@ import { User } from '@core/models/user.model';
   providedIn: 'root',
 })
 export class StorageService {
-  private readonly STORAGE_KEY = 'loggedInUser';
+  private readonly STORAGE_KEY = 'LOGGED_IN_USER';
 
   setUser(user: User): void {
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(user));

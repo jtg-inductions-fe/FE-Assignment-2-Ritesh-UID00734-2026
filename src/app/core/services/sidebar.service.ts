@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -6,7 +7,6 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SidebarService {
   private readonly openedSubject = new BehaviorSubject<boolean>(false);
-
   readonly opened$ = this.openedSubject.asObservable();
 
   get opened(): boolean {

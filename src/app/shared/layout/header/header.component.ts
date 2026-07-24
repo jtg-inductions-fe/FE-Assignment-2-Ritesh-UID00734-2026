@@ -15,7 +15,6 @@ import { User } from '@core/models/user.model';
 })
 export class HeaderComponent {
   readonly currentUser$: Observable<User | null>;
-
   readonly isMobile$: Observable<boolean>;
 
   constructor(

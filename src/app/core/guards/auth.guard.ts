@@ -1,5 +1,6 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
+
 import { StorageService } from '@core/services/storage.service';
 
 export const authGuard: CanActivateFn = () => {
@@ -9,6 +10,6 @@ export const authGuard: CanActivateFn = () => {
   if (storageService.isLoggedIn()) {
     return true;
   }
-
-  return router.createUrlTree(['/login']);
+  router.navigate(['/login']);
+  return false;
 };

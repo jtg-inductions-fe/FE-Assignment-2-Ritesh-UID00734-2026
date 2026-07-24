@@ -1,4 +1,4 @@
-import { OrderStatus } from './order-status.enum';
+import { OrderStatus } from './order-status.model';
 
 export interface LiveOrder {
   id: number;

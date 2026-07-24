@@ -1,49 +1,53 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  OnInit,
-} from '@angular/core';
-
-import { switchMap } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
 
 import { DashboardService } from '../../services/dashboard.service';
 import { RestaurantSelectionService } from '../../services/restaurant-selection.service';
 
 import { LiveOrder } from '@core/models/live-order.model';
-import { OrderStatus } from '@core/models/order-status.enum';
+import { OrderStatus } from '@app/core/models/order-status.model';
 
 @Component({
   selector: 'app-live-orders',
   templateUrl: './live-orders.component.html',
   styleUrls: ['./live-orders.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LiveOrdersComponent implements OnInit {
   readonly orderStatus = OrderStatus;
 
   liveOrders: LiveOrder[] = [];
 
+  loading = true;
+
+  error = false;
+
   constructor(
     private readonly dashboardService: DashboardService,
-    private readonly restaurantSelectionService: RestaurantSelectionService,
-    private readonly cdr: ChangeDetectorRef
+    private readonly restaurantSelectionService: RestaurantSelectionService
   ) {}
 
   ngOnInit(): void {
-    this.restaurantSelectionService.selectedRestaurantId$
-      .pipe(
-        switchMap(restaurantId =>
-          this.dashboardService.getLiveOrders(restaurantId)
-        )
-      )
-      .subscribe(liveOrders => {
-        this.liveOrders = liveOrders.map(order => ({
-          ...order,
-        }));
+    this.restaurantSelectionService.selectedRestaurantId$.subscribe(
+      restaurantId => {
+        this.loadLiveOrders(restaurantId);
+      }
+    );
+  }
 
-        this.cdr.markForCheck();
-      });
+  private loadLiveOrders(restaurantId: number | 'all'): void {
+    this.loading = true;
+    this.error = false;
+
+    this.dashboardService.getLiveOrders(restaurantId).subscribe({
+      next: liveOrders => {
+        this.liveOrders = liveOrders;
+        this.loading = false;
+      },
+      error: () => {
+        this.liveOrders = [];
+        this.loading = false;
+        this.error = true;
+      },
+    });
   }
 
   acceptOrder(orderId: number): void {
@@ -54,20 +58,14 @@ export class LiveOrdersComponent implements OnInit {
     }
 
     order.status = OrderStatus.Preparing;
-
-    this.cdr.markForCheck();
   }
 
   completeOrder(orderId: number): void {
     this.liveOrders = this.liveOrders.filter(order => order.id !== orderId);
-
-    this.cdr.markForCheck();
   }
 
   rejectOrder(orderId: number): void {
     this.liveOrders = this.liveOrders.filter(order => order.id !== orderId);
-
-    this.cdr.markForCheck();
   }
 
   isPending(order: LiveOrder): boolean {

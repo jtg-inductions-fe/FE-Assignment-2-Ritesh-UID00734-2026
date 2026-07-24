@@ -5,9 +5,19 @@
   padding-inline: abstracts.rem(14);
   padding-block: abstracts.rem(14);
 
+  &__loading,
+  &__error,
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
   &__list {
     max-height: abstracts.rem(400);
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-inline: abstracts.rem(12);
   }
 
@@ -17,17 +27,19 @@
 
   &__row {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: abstracts.rem(4);
     padding: abstracts.rem(18) 0;
-  }
 
-  &__name {
-    font-weight: 500;
+    @include abstracts.respond-up(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__orders {
     color: abstracts.$text-secondary;
-    font-weight: 600;
   }
 }

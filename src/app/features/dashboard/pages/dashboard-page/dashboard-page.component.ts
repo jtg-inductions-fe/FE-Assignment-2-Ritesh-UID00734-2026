@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Permission } from '@app/core/authorization/permission.model';
+import { PermissionService } from '@core/authorization/permission.service';
 import { AuthService } from '@core/services/auth.service';
+import { Restaurant } from '@core/models/restaurant.model';
+import { User } from '@core/models/user.model';
 
 import { DashboardService } from '../../services/dashboard.service';
 import { RestaurantSelectionService } from '../../services/restaurant-selection.service';
-
-import { Permission } from '@core/authorization/permission.enum';
-import { PermissionService } from '@core/authorization/permission.service';
-
-import { User } from '@core/models/user.model';
-import { Restaurant } from '@core/models/restaurant.model';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -18,36 +16,32 @@ import { Restaurant } from '@core/models/restaurant.model';
 })
 export class DashboardPageComponent implements OnInit {
   readonly currentUser: User | null;
-
   readonly permission = Permission;
-
   selectedRestaurantId: number | 'all';
-
   restaurants: Restaurant[] = [];
 
   constructor(
     private readonly authService: AuthService,
     private readonly dashboardService: DashboardService,
     private readonly restaurantSelectionService: RestaurantSelectionService,
-    public readonly permissionService: PermissionService
+    protected readonly permissionService: PermissionService
   ) {
     this.currentUser = this.authService.getCurrentUser();
 
-    this.selectedRestaurantId =
-      this.currentUser?.role === 'admin'
-        ? 'all'
-        : (this.currentUser?.restaurantId ?? 'all');
+    this.selectedRestaurantId = this.permissionService.hasPermission(
+      Permission.VIEW_RESTAURANTS
+    )
+      ? 'all'
+      : (this.currentUser?.restaurantId ?? 'all');
   }
 
   ngOnInit(): void {
     this.restaurantSelectionService.selectRestaurant(this.selectedRestaurantId);
-
     this.loadRestaurants();
   }
 
   onRestaurantChange(restaurantId: number | 'all'): void {
     this.selectedRestaurantId = restaurantId;
-
     this.restaurantSelectionService.selectRestaurant(restaurantId);
   }
 

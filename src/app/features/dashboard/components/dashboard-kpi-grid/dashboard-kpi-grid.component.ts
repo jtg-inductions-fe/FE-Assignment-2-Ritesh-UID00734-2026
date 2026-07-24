@@ -3,10 +3,10 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
+import { DashboardKpi } from '@core/models/dashboard-kpi.model';
+
 import { DashboardService } from '../../services/dashboard.service';
 import { RestaurantSelectionService } from '../../services/restaurant-selection.service';
-
-import { DashboardKpi } from '@core/models/dashboard-kpi.model';
 
 @Component({
   selector: 'app-dashboard-kpi-grid',
