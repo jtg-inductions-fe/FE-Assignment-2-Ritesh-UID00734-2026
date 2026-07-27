@@ -19,9 +19,17 @@
         class="top-selling-dishes__list">
         <div *ngFor="let dish of dishes; let last = last">
           <div class="top-selling-dishes__row">
-            <span class="top-selling-dishes__name mat-subtitle-2">
-              {{ dish.name }}
-            </span>
+            <div>
+              <div class="top-selling-dishes__name mat-subtitle-2">
+                {{ dish.name }}
+              </div>
+
+              <div
+                *ngIf="showRestaurantName"
+                class="top-selling-dishes__restaurant mat-caption">
+                {{ dish.restaurantName }}
+              </div>
+            </div>
 
             <span class="top-selling-dishes__orders mat-caption">
               {{ dish.orders }} Orders

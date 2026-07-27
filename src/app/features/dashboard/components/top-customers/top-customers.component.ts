@@ -12,9 +12,7 @@ import { RestaurantSelectionService } from '../../services/restaurant-selection.
 })
 export class TopCustomersComponent implements OnInit {
   customers: TopCustomer[] = [];
-
   loading = true;
-
   error = false;
 
   constructor(

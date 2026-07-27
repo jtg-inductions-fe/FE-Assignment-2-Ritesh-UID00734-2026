@@ -39,6 +39,11 @@
     }
   }
 
+  &__restaurant {
+    color: abstracts.$text-secondary;
+    margin-top: abstracts.rem(2);
+  }
+
   &__orders {
     color: abstracts.$text-secondary;
   }

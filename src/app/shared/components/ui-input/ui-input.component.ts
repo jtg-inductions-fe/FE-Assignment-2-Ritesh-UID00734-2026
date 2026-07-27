@@ -8,34 +8,19 @@ import { MatFormFieldAppearance } from '@angular/material/form-field';
   styleUrls: ['./ui-input.component.scss'],
 })
 export class UiInputComponent {
-  @Input({ required: true })
-  control!: FormControl<string>;
-
-  @Input()
-  label = '';
-
-  @Input()
-  placeholder = '';
-
-  @Input()
-  type = 'text';
-
-  @Input()
-  appearance: MatFormFieldAppearance = 'outline';
-
-  @Input()
-  errors: Record<string, string> = {};
-
-  @Input()
-  showPasswordToggle = false;
-
+  @Input({ required: true }) control!: FormControl<string>;
+  @Input() label = '';
+  @Input() placeholder = '';
+  @Input() type = 'text';
+  @Input() appearance: MatFormFieldAppearance = 'outline';
+  @Input() errors: Record<string, string> = {};
+  @Input() showPasswordToggle = false;
   hidePassword = true;
 
   get inputType(): string {
     if (this.type !== 'password') {
       return this.type;
     }
-
     return this.hidePassword ? 'password' : 'text';
   }
 
@@ -43,7 +28,6 @@ export class UiInputComponent {
     if (this.type !== 'password') {
       return;
     }
-
     this.hidePassword = !this.hidePassword;
   }
 
@@ -57,7 +41,6 @@ export class UiInputComponent {
         return this.errors[key];
       }
     }
-
     return '';
   }
 }

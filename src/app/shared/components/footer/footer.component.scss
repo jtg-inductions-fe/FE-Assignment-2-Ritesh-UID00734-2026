@@ -6,10 +6,15 @@
   gap: abstracts.rem(16);
   justify-content: space-between;
   align-items: center;
-  padding: abstracts.rem(20);
+  padding-inline: abstracts.rem(20);
+  padding-block: abstracts.rem(30);
   border: abstracts.rem(1) solid abstracts.$border-primary;
   border-radius: abstracts.rem(12);
   margin-block: abstracts.rem(10);
+  box-shadow:
+    0px 1px 10px 0px #0000001f,
+    0px 4px 5px 0px #00000024,
+    0px 2px 4px 1px #00000033;
 
   @include abstracts.respond-up(tablet) {
     flex-direction: row;

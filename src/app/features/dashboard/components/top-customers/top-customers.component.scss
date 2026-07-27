@@ -23,7 +23,7 @@
     gap: abstracts.rem(12);
     padding: abstracts.rem(16) 0;
 
-    @include abstracts.respond-up(tablet) {
+    @include abstracts.respond-up(mobile) {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -54,10 +54,6 @@
   }
 
   &__amount {
-    align-self: flex-start;
-
-    @include abstracts.respond-up(tablet) {
-      align-self: center;
-    }
+    align-self: center;
   }
 }

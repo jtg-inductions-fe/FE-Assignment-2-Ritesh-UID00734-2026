@@ -3,76 +3,91 @@
     {
       "id": 1,
       "name": "Chicken Biryani",
+      "restaurantName": "Spice Garden",
       "orders": 1284
     },
     {
       "id": 2,
       "name": "Paneer Butter Masala",
+      "restaurantName": "Spice Garden",
       "orders": 1126
     },
     {
       "id": 3,
       "name": "Veg Fried Rice",
+      "restaurantName": "Urban Bites",
       "orders": 1043
     },
     {
       "id": 4,
       "name": "Margherita Pizza",
+      "restaurantName": "Urban Bites",
       "orders": 958
     },
     {
       "id": 5,
       "name": "Classic Burger",
+      "restaurantName": "Cafe Central",
       "orders": 887
     },
     {
       "id": 6,
       "name": "Butter Chicken",
+      "restaurantName": "Spice Garden",
       "orders": 842
     },
     {
       "id": 7,
       "name": "Chicken Shawarma",
+      "restaurantName": "Cafe Central",
       "orders": 811
     },
     {
       "id": 8,
       "name": "Fish Curry",
+      "restaurantName": "Ocean Delight",
       "orders": 784
     },
     {
       "id": 9,
       "name": "Tandoori Roti",
+      "restaurantName": "Spice Garden",
       "orders": 742
     },
     {
       "id": 10,
       "name": "Dal Makhani",
+      "restaurantName": "Spice Garden",
       "orders": 715
     },
     {
       "id": 11,
       "name": "Caesar Salad",
+      "restaurantName": "Cafe Central",
       "orders": 689
     },
     {
       "id": 12,
       "name": "Seafood Platter",
+      "restaurantName": "Ocean Delight",
       "orders": 651
     },
     {
       "id": 13,
       "name": "French Fries",
+      "restaurantName": "Cafe Central",
       "orders": 624
     },
     {
       "id": 14,
       "name": "Chocolate Brownie",
+      "restaurantName": "Urban Bites",
       "orders": 601
     },
     {
       "id": 15,
       "name": "Cold Coffee",
+      "restaurantName": "Cafe Central",
       "orders": 587
     }
   ],

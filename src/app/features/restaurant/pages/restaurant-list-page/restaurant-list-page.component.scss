@@ -34,6 +34,10 @@
     gap: abstracts.rem(16);
     padding: abstracts.rem(20);
     border-radius: abstracts.rem(10);
+    box-shadow:
+      0px 1px 10px 0px #0000001f,
+      0px 4px 5px 0px #00000024,
+      0px 2px 4px 1px #00000033;
 
     @include abstracts.respond-up(desktop) {
       gap: 0;

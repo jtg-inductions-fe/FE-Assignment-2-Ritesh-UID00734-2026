@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { RestaurantService } from '../../services/restaurant.service';
+
 import { Restaurant } from '@core/models/restaurant.model';
+
+import { RestaurantService } from '../../services/restaurant.service';
 
 @Component({
   selector: 'app-add-restaurant-page',

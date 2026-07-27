@@ -25,12 +25,12 @@ export class LoginComponent {
   };
 
   constructor(
-    private readonly fb: FormBuilder,
+    private readonly formBuilder: FormBuilder,
     private readonly authService: AuthService,
     private readonly router: Router
   ) {}
 
-  loginForm = this.fb.nonNullable.group({
+  loginForm = this.formBuilder.nonNullable.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
   });

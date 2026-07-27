@@ -6,6 +6,8 @@
   padding-inline: abstracts.rem(16);
   border-radius: abstracts.rem(10);
   background-color: abstracts.$color-surface-secondary;
+  box-shadow: none;
+  border: 1px solid abstracts.$border-primary;
 
   &__content {
     display: flex;
@@ -21,7 +23,6 @@
   }
 
   &__description {
-    margin: abstracts.rem(8) 0 0;
     color: abstracts.$text-secondary;
   }
 
@@ -30,10 +31,6 @@
     flex-direction: column;
     width: 100%;
     gap: abstracts.rem(12);
-
-    button {
-      width: 100%;
-    }
 
     @include abstracts.respond-up(tablet) {
       flex-direction: row;

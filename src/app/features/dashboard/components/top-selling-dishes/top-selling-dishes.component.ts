@@ -12,10 +12,9 @@ import { RestaurantSelectionService } from '../../services/restaurant-selection.
 })
 export class TopSellingDishesComponent implements OnInit {
   dishes: TopSellingDish[] = [];
-
   loading = true;
-
   error = false;
+  showRestaurantName = true;
 
   constructor(
     private readonly dashboardService: DashboardService,
@@ -25,6 +24,7 @@ export class TopSellingDishesComponent implements OnInit {
   ngOnInit(): void {
     this.restaurantSelectionService.selectedRestaurantId$.subscribe(
       restaurantId => {
+        this.showRestaurantName = restaurantId === 'all';
         this.loadTopSellingDishes(restaurantId);
       }
     );

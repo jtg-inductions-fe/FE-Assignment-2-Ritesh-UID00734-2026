@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { DashboardService } from '../../services/dashboard.service';
-import { RestaurantSelectionService } from '../../services/restaurant-selection.service';
-
 import { LiveOrder } from '@core/models/live-order.model';
 import { OrderStatus } from '@app/core/models/order-status.model';
+
+import { DashboardService } from '../../services/dashboard.service';
+import { RestaurantSelectionService } from '../../services/restaurant-selection.service';
 
 @Component({
   selector: 'app-live-orders',
@@ -13,11 +13,8 @@ import { OrderStatus } from '@app/core/models/order-status.model';
 })
 export class LiveOrdersComponent implements OnInit {
   readonly orderStatus = OrderStatus;
-
   liveOrders: LiveOrder[] = [];
-
   loading = true;
-
   error = false;
 
   constructor(

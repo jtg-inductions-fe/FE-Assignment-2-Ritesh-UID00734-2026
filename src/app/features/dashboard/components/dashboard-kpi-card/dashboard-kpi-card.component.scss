@@ -6,6 +6,8 @@
   border-radius: abstracts.rem(10);
   padding-inline: abstracts.rem(10);
   padding-block: abstracts.rem(14);
+  box-shadow: none;
+  border: 1px solid abstracts.$border-primary;
 
   &__content {
     display: flex;
@@ -20,7 +22,7 @@
   }
 
   &__title {
-    margin: 0 0 abstracts.rem(8);
+    margin: 0;
     color: abstracts.$text-secondary;
   }
 

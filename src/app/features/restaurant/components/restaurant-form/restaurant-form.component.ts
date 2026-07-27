@@ -1,9 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
 import { FormBuilder, Validators } from '@angular/forms';
 
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-
 import { MatChipInputEvent } from '@angular/material/chips';
 
 import { Restaurant } from '@core/models/restaurant.model';

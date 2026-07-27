@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { RestaurantService } from '../../services/restaurant.service';
-
 import { Restaurant } from '@core/models/restaurant.model';
+
+import { RestaurantService } from '../../services/restaurant.service';
 
 @Component({
   selector: 'app-edit-restaurant-page',
@@ -35,7 +34,6 @@ export class EditRestaurantPageComponent implements OnInit {
 
   onSave(restaurant: Restaurant): void {
     this.restaurantService.updateRestaurant(restaurant);
-
     this.router.navigate(['/restaurant']);
   }
 
