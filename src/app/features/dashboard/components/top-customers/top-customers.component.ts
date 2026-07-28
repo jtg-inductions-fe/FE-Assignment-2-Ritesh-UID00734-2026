@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 import { TopCustomer } from '@core/models/top-customer.model';
 
@@ -14,6 +18,7 @@ export class TopCustomersComponent implements OnInit {
   customers: TopCustomer[] = [];
   loading = true;
   error = false;
+  private readonly destroyRef = inject(DestroyRef);
 
   constructor(
     private readonly dashboardService: DashboardService,
@@ -21,27 +26,30 @@ export class TopCustomersComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.restaurantSelectionService.selectedRestaurantId$.subscribe(
-      restaurantId => {
-        this.loadTopCustomers(restaurantId);
-      }
-    );
+    this.restaurantSelectionService.selectedRestaurantId$
+      .pipe(
+        switchMap(restaurantId => this.loadTopCustomers(restaurantId)),
+        takeUntilDestroyed(this.destroyRef)
+      )
+      .subscribe({
+        next: customers => {
+          this.customers = customers;
+          this.loading = false;
+        },
+        error: () => {
+          this.customers = [];
+          this.loading = false;
+          this.error = true;
+        },
+      });
   }
 
-  private loadTopCustomers(restaurantId: number | 'all'): void {
+  private loadTopCustomers(
+    restaurantId: number | 'all'
+  ): Observable<TopCustomer[]> {
     this.loading = true;
     this.error = false;
 
-    this.dashboardService.getTopCustomers(restaurantId).subscribe({
-      next: customers => {
-        this.customers = customers;
-        this.loading = false;
-      },
-      error: () => {
-        this.customers = [];
-        this.loading = false;
-        this.error = true;
-      },
-    });
+    return this.dashboardService.getTopCustomers(restaurantId);
   }
 }

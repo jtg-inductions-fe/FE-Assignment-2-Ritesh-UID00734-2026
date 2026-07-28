@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DestroyRef, OnInit, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 import { LiveOrder } from '@core/models/live-order.model';
 import { OrderStatus } from '@app/core/models/order-status.model';
@@ -16,6 +20,7 @@ export class LiveOrdersComponent implements OnInit {
   liveOrders: LiveOrder[] = [];
   loading = true;
   error = false;
+  private readonly destroyRef = inject(DestroyRef);
 
   constructor(
     private readonly dashboardService: DashboardService,
@@ -23,28 +28,31 @@ export class LiveOrdersComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.restaurantSelectionService.selectedRestaurantId$.subscribe(
-      restaurantId => {
-        this.loadLiveOrders(restaurantId);
-      }
-    );
+    this.restaurantSelectionService.selectedRestaurantId$
+      .pipe(
+        switchMap(restaurantId => this.loadLiveOrders(restaurantId)),
+        takeUntilDestroyed(this.destroyRef)
+      )
+      .subscribe({
+        next: liveOrders => {
+          this.liveOrders = liveOrders;
+          this.loading = false;
+        },
+        error: () => {
+          this.liveOrders = [];
+          this.loading = false;
+          this.error = true;
+        },
+      });
   }
 
-  private loadLiveOrders(restaurantId: number | 'all'): void {
+  private loadLiveOrders(
+    restaurantId: number | 'all'
+  ): Observable<LiveOrder[]> {
     this.loading = true;
     this.error = false;
 
-    this.dashboardService.getLiveOrders(restaurantId).subscribe({
-      next: liveOrders => {
-        this.liveOrders = liveOrders;
-        this.loading = false;
-      },
-      error: () => {
-        this.liveOrders = [];
-        this.loading = false;
-        this.error = true;
-      },
-    });
+    return this.dashboardService.getLiveOrders(restaurantId);
   }
 
   acceptOrder(orderId: number): void {

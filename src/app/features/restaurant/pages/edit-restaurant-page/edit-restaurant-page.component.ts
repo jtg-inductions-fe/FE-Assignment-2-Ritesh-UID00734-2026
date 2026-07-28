@@ -21,13 +21,11 @@ export class EditRestaurantPageComponent implements OnInit {
 
   ngOnInit(): void {
     const id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-
     this.restaurantService.getRestaurant(id).subscribe(restaurant => {
       if (!restaurant) {
         this.router.navigate(['/restaurant']);
         return;
       }
-
       this.restaurant = restaurant;
     });
   }

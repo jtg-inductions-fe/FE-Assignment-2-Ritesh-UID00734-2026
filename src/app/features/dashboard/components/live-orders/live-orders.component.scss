@@ -91,7 +91,7 @@
         abstracts.rem(140)
         abstracts.rem(240);
       column-gap: abstracts.rem(24);
-      padding: abstracts.rem(20) 0;
+      padding: abstracts.rem(20) abstracts.rem(10);
       border: 0;
       border-bottom: abstracts.rem(1) solid abstracts.$border-primary;
       border-radius: 0;

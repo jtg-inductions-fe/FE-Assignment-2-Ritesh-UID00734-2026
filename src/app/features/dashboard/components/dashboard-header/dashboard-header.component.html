@@ -22,9 +22,7 @@
       (input)="onSearch($any($event.target).value)"
       [matAutocomplete]="restaurantAutocomplete" />
 
-    <mat-autocomplete
-      #restaurantAutocomplete="matAutocomplete"
-      [displayWith]="displayRestaurant">
+    <mat-autocomplete #restaurantAutocomplete="matAutocomplete">
       <mat-option
         [value]="'all'"
         (onSelectionChange)="onRestaurantSelected('all', $event.isUserInput)">

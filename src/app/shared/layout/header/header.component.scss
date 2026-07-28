@@ -22,11 +22,36 @@
     align-items: center;
   }
 
-  &__user {
-    padding: abstracts.rem(12) abstracts.rem(16);
+  &__menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: abstracts.rem(12);
+    width: abstracts.rem(260);
+    padding: abstracts.rem(24);
   }
 
-  &__user-email {
+  &__menu-avatar {
+    width: abstracts.rem(72);
+    height: abstracts.rem(72);
+    border-radius: 50%;
+    object-fit: cover;
+    border: abstracts.rem(2) solid abstracts.$border-primary;
+  }
+
+  &__menu-name {
+    margin: 0;
+    text-align: center;
+  }
+
+  &__menu-email {
+    margin: 0;
     color: abstracts.$text-secondary;
+    text-align: center;
+  }
+
+  &__menu-actions {
+    width: 100%;
+    padding-top: abstracts.rem(8);
   }
 }

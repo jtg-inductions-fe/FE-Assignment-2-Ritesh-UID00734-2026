@@ -32,24 +32,34 @@
           [alt]="currentUser.name" />
       </button>
 
-      <mat-menu #userMenu="matMenu">
-        <section class="header__user">
-          <p class="header__user-name">
-            {{ currentUser.name }}
-          </p>
+      <mat-menu #userMenu="matMenu" class="header__menu">
+        <div class="header__menu-content">
+          <img
+            class="header__menu-avatar"
+            [src]="currentUser.avatar"
+            [alt]="currentUser.name" />
 
-          <p class="header__user-email">
+          <h3 class="header__menu-name mat-subtitle-1">
+            {{ currentUser.name }}
+          </h3>
+
+          <p class="header__menu-email mat-caption">
             {{ currentUser.email }}
           </p>
-        </section>
 
-        <mat-divider></mat-divider>
+          <mat-divider></mat-divider>
 
-        <button mat-menu-item (click)="logout()">
-          <mat-icon>logout</mat-icon>
-
-          <span>Logout</span>
-        </button>
+          <div class="header__menu-actions">
+            <app-ui-button
+              label="Logout"
+              icon="logout"
+              variant="stroked"
+              color="warn"
+              [fullWidth]="true"
+              (buttonClick)="logout()">
+            </app-ui-button>
+          </div>
+        </div>
       </mat-menu>
     </ng-container>
   </mat-toolbar>

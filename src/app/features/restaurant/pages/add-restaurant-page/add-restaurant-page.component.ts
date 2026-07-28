@@ -18,7 +18,6 @@ export class AddRestaurantPageComponent {
 
   onSave(restaurant: Restaurant): void {
     this.restaurantService.addRestaurant(restaurant);
-
     this.router.navigate(['/restaurant']);
   }
 

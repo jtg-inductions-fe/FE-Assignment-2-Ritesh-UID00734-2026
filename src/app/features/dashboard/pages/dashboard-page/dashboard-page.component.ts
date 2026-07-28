@@ -8,6 +8,10 @@ import { User } from '@core/models/user.model';
 
 import { DashboardService } from '../../services/dashboard.service';
 import { RestaurantSelectionService } from '../../services/restaurant-selection.service';
+import {
+  DASHBOARD_PAGE_CONFIG,
+  DashboardConfig,
+} from '../../config/dashboard-page.config';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -38,6 +42,12 @@ export class DashboardPageComponent implements OnInit {
   ngOnInit(): void {
     this.restaurantSelectionService.selectRestaurant(this.selectedRestaurantId);
     this.loadRestaurants();
+  }
+
+  get pageConfig(): DashboardConfig {
+    return this.permissionService.hasPermission(Permission.VIEW_RESTAURANTS)
+      ? DASHBOARD_PAGE_CONFIG.admin
+      : DASHBOARD_PAGE_CONFIG.owner;
   }
 
   onRestaurantChange(restaurantId: number | 'all'): void {

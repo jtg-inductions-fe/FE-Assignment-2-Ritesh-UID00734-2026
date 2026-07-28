@@ -1,7 +1,7 @@
 <div class="dashboard-page">
   <app-dashboard-header
-    [title]="'Overview Dashboard'"
-    [description]="'System administrator overview panel. Impersonate owners or view aggregate metrics.'"
+    [title]="pageConfig.title"
+    [description]="pageConfig.description"
     [restaurants]="restaurants"
     [selectedRestaurantId]="selectedRestaurantId"
     [showRestaurantSelector]="
