@@ -1,9 +1,6 @@
 @use 'abstracts' as abstracts;
 
-.full-width {
-  width: 100%;
-}
-
 button {
   min-height: abstracts.rem(36);
+  width: 100%;
 }

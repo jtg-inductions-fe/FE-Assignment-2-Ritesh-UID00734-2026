@@ -19,7 +19,6 @@ export class UiButtonComponent {
   @Input() label = '';
   @Input() disabled = false;
   @Input() loading = false;
-  @Input() fullWidth = false;
   @Input() icon = '';
   @Input() iconPosition: 'left' | 'right' = 'left';
   @Input() routerLink?: string;

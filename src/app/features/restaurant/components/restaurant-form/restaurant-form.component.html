@@ -85,7 +85,6 @@
         <app-ui-button
           variant="stroked"
           label="CANCEL"
-          [fullWidth]="true"
           (buttonClick)="cancel.emit()">
         </app-ui-button>
 
@@ -93,8 +92,7 @@
           type="submit"
           [label]="submitLabel"
           icon="save"
-          [disabled]="form.invalid"
-          [fullWidth]="true">
+          [disabled]="form.invalid">
         </app-ui-button>
       </div>
     </form>
