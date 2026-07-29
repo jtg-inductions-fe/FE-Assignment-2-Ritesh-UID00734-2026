@@ -1,6 +1,8 @@
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivateFn, Router } from '@angular/router';
 
+import { ROUTES } from '@core/constants/routes.constants';
+
 import { Permission } from './permission.model';
 import { PermissionService } from './permission.service';
 
@@ -14,6 +16,7 @@ export const permissionGuard: CanActivateFn = (
   if (permissionService.hasPermission(permission)) {
     return true;
   }
-  router.navigate(['/404']);
+
+  router.navigate([`/${ROUTES.NOT_FOUND}`]);
   return false;
 };

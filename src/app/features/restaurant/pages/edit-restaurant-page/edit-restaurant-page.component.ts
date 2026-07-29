@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import { RestaurantService } from '@features/restaurant/services/restaurant.service';
 import { Restaurant } from '@core/models/restaurant.model';
-
-import { RestaurantService } from '../../services/restaurant.service';
 
 @Component({
   selector: 'app-edit-restaurant-page',

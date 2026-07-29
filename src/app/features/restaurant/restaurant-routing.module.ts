@@ -3,35 +3,36 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { Permission } from '@core/authorization/permission.model';
 import { permissionGuard } from '@core/authorization/permission.guard';
+import { ROUTES } from '@core/constants/routes.constants';
 
-import { RestaurantListPageComponent } from './pages/restaurant-list-page/restaurant-list-page.component';
 import { AddRestaurantPageComponent } from './pages/add-restaurant-page/add-restaurant-page.component';
 import { EditRestaurantPageComponent } from './pages/edit-restaurant-page/edit-restaurant-page.component';
+import { RestaurantListPageComponent } from './pages/restaurant-list-page/restaurant-list-page.component';
 
 const routes: Routes = [
   {
     path: '',
+    component: RestaurantListPageComponent,
     canActivate: [permissionGuard],
     data: {
       permission: Permission.VIEW_RESTAURANTS,
     },
-    component: RestaurantListPageComponent,
   },
   {
-    path: 'add',
+    path: ROUTES.RESTAURANT_ADD,
+    component: AddRestaurantPageComponent,
     canActivate: [permissionGuard],
     data: {
       permission: Permission.CREATE_RESTAURANT,
     },
-    component: AddRestaurantPageComponent,
   },
   {
-    path: ':id/edit',
+    path: ROUTES.RESTAURANT_EDIT,
+    component: EditRestaurantPageComponent,
     canActivate: [permissionGuard],
     data: {
       permission: Permission.EDIT_RESTAURANT,
     },
-    component: EditRestaurantPageComponent,
   },
 ];
 

@@ -7,7 +7,6 @@ import {
   Validators,
   FormControl,
 } from '@angular/forms';
-
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
 

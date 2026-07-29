@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 
 import { BehaviorSubject, Observable, map, tap } from 'rxjs';
 
+import { StorageService } from '@core/services/storage.service';
 import { LoginRequest } from '@core/models/login-request.model';
 import { User } from '@core/models/user.model';
-import { StorageService } from '@core/services/storage.service';
 
 @Injectable({
   providedIn: 'root',

@@ -3,43 +3,42 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { authGuard } from '@core/guards/auth.guard';
 import { loginGuard } from '@core/guards/login.guard';
+import { ROUTES } from '@core/constants/routes.constants';
 import { MainLayoutComponent } from '@shared/layout/main-layout/main-layout.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'login',
+    path: ROUTES.ROOT,
+    redirectTo: ROUTES.LOGIN,
     pathMatch: 'full',
   },
-
   {
-    path: 'login',
+    path: ROUTES.LOGIN,
     canActivate: [loginGuard],
     loadChildren: () =>
       import('@features/auth/auth.module').then(m => m.AuthModule),
   },
-
   {
-    path: '',
+    path: ROUTES.ROOT,
     component: MainLayoutComponent,
     canActivate: [authGuard],
     children: [
       {
-        path: 'dashboard',
+        path: ROUTES.DASHBOARD,
         loadChildren: () =>
           import('@features/dashboard/dashboard.module').then(
             m => m.DashboardModule
           ),
       },
       {
-        path: 'restaurant',
+        path: ROUTES.RESTAURANT,
         loadChildren: () =>
           import('@features/restaurant/restaurant.module').then(
             m => m.RestaurantModule
           ),
       },
       {
-        path: '',
+        path: ROUTES.ROOT,
         loadChildren: () =>
           import('@features/error-pages/error-pages.module').then(
             m => m.ErrorPagesModule
@@ -47,10 +46,9 @@ const routes: Routes = [
       },
     ],
   },
-
   {
-    path: '**',
-    redirectTo: 'login',
+    path: ROUTES.WILDCARD,
+    redirectTo: ROUTES.LOGIN,
   },
 ];
 

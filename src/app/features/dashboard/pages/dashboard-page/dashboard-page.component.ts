@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Permission } from '@app/core/authorization/permission.model';
-import { PermissionService } from '@core/authorization/permission.service';
 import { AuthService } from '@core/services/auth.service';
+import { DashboardService } from '@features/dashboard/services/dashboard.service';
+import { PermissionService } from '@core/authorization/permission.service';
+import { RestaurantSelectionService } from '@features/dashboard/services/restaurant-selection.service';
+import { Permission } from '@app/core/authorization/permission.model';
 import { Restaurant } from '@core/models/restaurant.model';
 import { User } from '@core/models/user.model';
 
-import { DashboardService } from '../../services/dashboard.service';
-import { RestaurantSelectionService } from '../../services/restaurant-selection.service';
 import {
   DASHBOARD_PAGE_CONFIG,
   DashboardConfig,
