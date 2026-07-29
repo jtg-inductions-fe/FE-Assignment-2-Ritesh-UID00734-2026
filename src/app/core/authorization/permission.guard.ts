@@ -6,7 +6,7 @@ import { ROUTES } from '@core/constants/routes.constants';
 import { Permission } from './permission.model';
 import { PermissionService } from './permission.service';
 
-export const permissionGuard: CanActivateFn = (
+export const PermissionGuard: CanActivateFn = (
   route: ActivatedRouteSnapshot
 ) => {
   const router = inject(Router);

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { Permission } from '@core/authorization/permission.model';
-import { permissionGuard } from '@core/authorization/permission.guard';
+import { PermissionGuard } from '@core/authorization/permission.guard';
 import { ROUTES } from '@core/constants/routes.constants';
 
 import { AddRestaurantPageComponent } from './pages/add-restaurant-page/add-restaurant-page.component';
@@ -13,7 +13,7 @@ const routes: Routes = [
   {
     path: '',
     component: RestaurantListPageComponent,
-    canActivate: [permissionGuard],
+    canActivate: [PermissionGuard],
     data: {
       permission: Permission.VIEW_RESTAURANTS,
     },
@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path: ROUTES.RESTAURANT_ADD,
     component: AddRestaurantPageComponent,
-    canActivate: [permissionGuard],
+    canActivate: [PermissionGuard],
     data: {
       permission: Permission.CREATE_RESTAURANT,
     },
@@ -29,7 +29,7 @@ const routes: Routes = [
   {
     path: ROUTES.RESTAURANT_EDIT,
     component: EditRestaurantPageComponent,
-    canActivate: [permissionGuard],
+    canActivate: [PermissionGuard],
     data: {
       permission: Permission.EDIT_RESTAURANT,
     },

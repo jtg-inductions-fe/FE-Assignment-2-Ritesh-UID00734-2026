@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { authGuard } from '@core/guards/auth.guard';
-import { loginGuard } from '@core/guards/login.guard';
+import { AuthGuard } from '@core/guards/auth.guard';
+import { LoginGuard } from '@core/guards/login.guard';
 import { ROUTES } from '@core/constants/routes.constants';
 import { MainLayoutComponent } from '@shared/layout/main-layout/main-layout.component';
 
@@ -14,14 +14,14 @@ const routes: Routes = [
   },
   {
     path: ROUTES.LOGIN,
-    canActivate: [loginGuard],
+    canActivate: [LoginGuard],
     loadChildren: () =>
       import('@features/auth/auth.module').then(m => m.AuthModule),
   },
   {
     path: ROUTES.ROOT,
     component: MainLayoutComponent,
-    canActivate: [authGuard],
+    canActivate: [AuthGuard],
     children: [
       {
         path: ROUTES.DASHBOARD,
