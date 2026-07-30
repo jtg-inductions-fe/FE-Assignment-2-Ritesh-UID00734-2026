@@ -1,0 +1,30 @@
+@use 'abstracts' as abstracts;
+@use 'themes' as themes;
+@use '@angular/material' as mat;
+
+.sidebar-item {
+  border: none;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: abstracts.rem(12);
+  }
+
+  &__children {
+    padding-left: abstracts.rem(20);
+  }
+
+  &--active {
+    .sidebar-item__icon,
+    .sidebar-item__label {
+      color: mat.get-color-from-palette(themes.$primary, 600);
+    }
+  }
+}

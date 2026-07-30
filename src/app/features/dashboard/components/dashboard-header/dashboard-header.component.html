@@ -1,0 +1,42 @@
+<div class="dashboard-header">
+  <div class="dashboard-header__content">
+    <h1 class="dashboard-header__title mat-headline-1">
+      {{ title }}
+    </h1>
+
+    <p class="dashboard-header__description mat-body-1">
+      {{ description }}
+    </p>
+  </div>
+
+  <mat-form-field
+    *ngIf="showRestaurantSelector"
+    class="dashboard-header__selector"
+    appearance="outline">
+    <mat-label> Restaurant </mat-label>
+
+    <input
+      matInput
+      type="text"
+      [value]="searchText"
+      (input)="onSearch($any($event.target).value)"
+      [matAutocomplete]="restaurantAutocomplete" />
+
+    <mat-autocomplete #restaurantAutocomplete="matAutocomplete">
+      <mat-option
+        [value]="'all'"
+        (onSelectionChange)="onRestaurantSelected('all', $event.isUserInput)">
+        All Restaurants
+      </mat-option>
+
+      <mat-option
+        *ngFor="let restaurant of filteredRestaurants"
+        [value]="restaurant"
+        (onSelectionChange)="
+          onRestaurantSelected(restaurant, $event.isUserInput)
+        ">
+        {{ restaurant.name }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>

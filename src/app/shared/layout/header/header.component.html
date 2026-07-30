@@ -1,0 +1,65 @@
+<header class="header">
+  <mat-toolbar class="header__toolbar">
+    <section class="header__left">
+      <button
+        *ngIf="(isMobile$ | async) && (currentUser$ | async)"
+        mat-icon-button
+        type="button"
+        (click)="toggleSidebar()"
+        aria-label="Toggle sidebar">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <a
+        class="header__logo"
+        routerLink="/dashboard"
+        aria-label="Restaurant Management">
+        <img
+          class="header__logo-image"
+          src="assets/images/app-logo.svg"
+          alt="Restaurant Management Logo" />
+      </a>
+    </section>
+
+    <ng-container *ngIf="currentUser$ | async as currentUser">
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="userMenu"
+        aria-label="Open user menu">
+        <img
+          class="header__avatar"
+          [src]="currentUser.avatar"
+          [alt]="currentUser.name" />
+      </button>
+
+      <mat-menu #userMenu="matMenu" class="header__menu">
+        <div class="header__menu-content">
+          <img
+            class="header__menu-avatar"
+            [src]="currentUser.avatar"
+            [alt]="currentUser.name" />
+
+          <h3 class="header__menu-name mat-subtitle-1">
+            {{ currentUser.name }}
+          </h3>
+
+          <p class="header__menu-email mat-caption">
+            {{ currentUser.email }}
+          </p>
+
+          <mat-divider></mat-divider>
+
+          <div class="header__menu-actions">
+            <app-ui-button
+              label="Logout"
+              icon="logout"
+              variant="stroked"
+              color="warn"
+              (buttonClick)="logout()">
+            </app-ui-button>
+          </div>
+        </div>
+      </mat-menu>
+    </ng-container>
+  </mat-toolbar>
+</header>

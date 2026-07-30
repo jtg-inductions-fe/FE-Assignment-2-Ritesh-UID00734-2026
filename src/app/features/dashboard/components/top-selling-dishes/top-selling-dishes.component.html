@@ -1,0 +1,50 @@
+<app-list-card title="Top Selling Dishes">
+  <div *ngIf="loading" class="top-selling-dishes__loading">
+    <mat-progress-spinner mode="indeterminate" diameter="40">
+    </mat-progress-spinner>
+  </div>
+
+  <ng-container *ngIf="!loading">
+    <div *ngIf="error" class="top-selling-dishes__error">
+      <mat-icon>error_outline</mat-icon>
+
+      <p class="mat-subtitle-2">Failed to load top selling dishes.</p>
+
+      <p class="mat-caption">Please try again later.</p>
+    </div>
+
+    <ng-container *ngIf="!error">
+      <div
+        *ngIf="dishes.length; else emptyState"
+        class="top-selling-dishes__list">
+        <div *ngFor="let dish of dishes; let last = last">
+          <div class="top-selling-dishes__row">
+            <div>
+              <div class="top-selling-dishes__name mat-subtitle-2">
+                {{ dish.name }}
+              </div>
+
+              <div
+                *ngIf="showRestaurantName"
+                class="top-selling-dishes__restaurant mat-caption">
+                {{ dish.restaurantName }}
+              </div>
+            </div>
+
+            <span class="top-selling-dishes__orders mat-caption">
+              {{ dish.orders }} Orders
+            </span>
+          </div>
+
+          <mat-divider *ngIf="!last"></mat-divider>
+        </div>
+      </div>
+
+      <ng-template #emptyState>
+        <p class="top-selling-dishes__empty mat-caption">
+          No top selling dishes.
+        </p>
+      </ng-template>
+    </ng-container>
+  </ng-container>
+</app-list-card>

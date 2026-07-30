@@ -1,0 +1,50 @@
+@use 'abstracts' as abstracts;
+
+.top-selling-dishes {
+  border-radius: abstracts.rem(10);
+  padding-inline: abstracts.rem(14);
+  padding-block: abstracts.rem(14);
+
+  &__loading,
+  &__error,
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__list {
+    max-height: abstracts.rem(400);
+    overflow-y: auto;
+    padding-inline: abstracts.rem(12);
+  }
+
+  &__title {
+    margin: abstracts.rem(18) abstracts.rem(12);
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: abstracts.rem(4);
+    padding: abstracts.rem(18) 0;
+
+    @include abstracts.respond-up(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__restaurant {
+    color: abstracts.$text-secondary;
+    margin-top: abstracts.rem(2);
+  }
+
+  &__orders {
+    color: abstracts.$text-secondary;
+  }
+}

@@ -1,0 +1,134 @@
+@use 'abstracts' as abstracts;
+
+.live-orders {
+  border-radius: abstracts.rem(10);
+  padding-inline: abstracts.rem(10);
+  padding-block: abstracts.rem(14);
+  margin-top: abstracts.rem(14);
+  height: abstracts.rem(500);
+  box-shadow:
+    0px 1px 10px 0px #0000001f,
+    0px 4px 5px 0px #00000024,
+    0px 2px 4px 1px #00000033;
+
+  &__loading,
+  &__error,
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__header {
+    margin-bottom: abstracts.rem(24);
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__description {
+    margin-top: abstracts.rem(4);
+    color: abstracts.$text-secondary;
+  }
+
+  &__table {
+    display: flex;
+    flex-direction: column;
+    gap: abstracts.rem(16);
+    overflow-y: scroll;
+
+    @include abstracts.respond-up(desktop) {
+      gap: 0;
+    }
+  }
+
+  &__table-header {
+    display: none;
+
+    @include abstracts.respond-up(desktop) {
+      display: grid;
+      grid-template-columns:
+        abstracts.rem(140)
+        abstracts.rem(220)
+        2fr
+        abstracts.rem(140)
+        abstracts.rem(140)
+        abstracts.rem(240);
+      align-items: center;
+      column-gap: abstracts.rem(24);
+      padding-bottom: abstracts.rem(16);
+      border-bottom: abstracts.rem(1) solid abstracts.$border-primary;
+      color: abstracts.$text-secondary;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: abstracts.rem(16);
+    padding: abstracts.rem(20);
+    border: abstracts.rem(1) solid abstracts.$border-primary;
+    border-radius: abstracts.rem(12);
+    background: abstracts.$color-surface-base;
+
+    @include abstracts.respond-up(tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: abstracts.rem(18) abstracts.rem(24);
+      align-items: center;
+    }
+
+    @include abstracts.respond-up(desktop) {
+      display: grid;
+      grid-template-columns:
+        abstracts.rem(140)
+        abstracts.rem(220)
+        2fr
+        abstracts.rem(140)
+        abstracts.rem(140)
+        abstracts.rem(240);
+      column-gap: abstracts.rem(24);
+      padding: abstracts.rem(20) abstracts.rem(10);
+      border: 0;
+      border-bottom: abstracts.rem(1) solid abstracts.$border-primary;
+      border-radius: 0;
+    }
+  }
+
+  &__items {
+    color: abstracts.$text-secondary;
+  }
+
+  &__status {
+    border-radius: abstracts.rem(10);
+    padding-inline: abstracts.rem(10);
+    width: max-content;
+  }
+
+  &__status--pending {
+    background-color: #fef3c7;
+    color: #d97706;
+  }
+
+  &__status--preparing {
+    background-color: #9aeab7;
+    color: #316745;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: abstracts.rem(10);
+
+    @include abstracts.respond-up(tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &__actions-header {
+    text-align: right;
+  }
+}

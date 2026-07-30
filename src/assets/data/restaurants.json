@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Spice Garden",
+    "address": "MG Road, Bangalore",
+    "owners": ["john@example.com", "jane@example.com"]
+  },
+  {
+    "id": 2,
+    "name": "Pizza Palace",
+    "address": "Sector 18, Noida",
+    "owners": ["rahul@example.com"]
+  },
+  {
+    "id": 3,
+    "name": "Burger Hub",
+    "address": "Connaught Place, Delhi",
+    "owners": ["emily@example.com", "david@example.com"]
+  },
+  {
+    "id": 4,
+    "name": "Ocean Bites",
+    "address": "Marine Drive, Mumbai",
+    "owners": ["priya@example.com"]
+  }
+]

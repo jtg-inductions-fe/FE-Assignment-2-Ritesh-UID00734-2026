@@ -1,0 +1,42 @@
+<div class="login">
+  <div class="login__container">
+    <mat-card class="login__card">
+      <div class="login__header">
+        <p class="login__title mat-headline-5">Restaurant Portal</p>
+
+        <p class="login__subtitle mat-caption">
+          Log in to manage orders, menus, and stats.
+        </p>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="login__field">
+          <app-ui-input
+            label="Email"
+            type="email"
+            [control]="loginForm.controls.email"
+            [errors]="validationMessages.email">
+          </app-ui-input>
+        </div>
+        <div class="login__field">
+          <app-ui-input
+            label="Password"
+            type="password"
+            [showPasswordToggle]="true"
+            [control]="loginForm.controls.password"
+            [errors]="validationMessages.password">
+          </app-ui-input>
+        </div>
+        <div *ngIf="loginError" class="login__error mat-caption">
+          {{ loginError }}
+        </div>
+
+        <app-ui-button
+          label="LOGIN"
+          type="submit"
+          variant="raised"
+          color="primary">
+        </app-ui-button>
+      </form>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="edit-restaurant-page">
+  <app-restaurant-form
+    *ngIf="restaurant"
+    title="Edit Restaurant"
+    submitLabel="SAVE CHANGES"
+    [restaurant]="restaurant"
+    (save)="onSave($event)"
+    (cancel)="onCancel()">
+  </app-restaurant-form>
+</div>

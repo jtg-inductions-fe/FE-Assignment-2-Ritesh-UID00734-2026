@@ -1,0 +1,28 @@
+<div class="dashboard-page">
+  <app-dashboard-header
+    [title]="pageConfig.title"
+    [description]="pageConfig.description"
+    [restaurants]="restaurants"
+    [selectedRestaurantId]="selectedRestaurantId"
+    [showRestaurantSelector]="
+      permissionService.hasPermission(permission.VIEW_RESTAURANTS)
+    "
+    (restaurantChanged)="onRestaurantChange($event)">
+  </app-dashboard-header>
+
+  <app-dashboard-kpi-grid> </app-dashboard-kpi-grid>
+
+  <app-report-generator></app-report-generator>
+
+  <div class="dashboard-page__analytics">
+    <app-top-customers> </app-top-customers>
+
+    <app-top-selling-dishes> </app-top-selling-dishes>
+  </div>
+  <div
+    class="dashboard-page__live-orders"
+    *ngIf="permissionService.hasPermission(permission.VIEW_ORDERS)">
+    <app-live-orders> </app-live-orders>
+  </div>
+  <app-footer></app-footer>
+</div>

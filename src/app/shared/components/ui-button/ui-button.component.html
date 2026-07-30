@@ -1,0 +1,58 @@
+<ng-container [ngSwitch]="variant">
+  <button
+    *ngSwitchCase="'raised'"
+    mat-raised-button
+    [color]="color"
+    [type]="type"
+    [disabled]="disabled || loading"
+    [routerLink]="routerLink"
+    (click)="onClick($event)">
+    <mat-icon *ngIf="icon && iconPosition === 'left'">
+      {{ icon }}
+    </mat-icon>
+
+    {{ label }}
+
+    <mat-icon *ngIf="icon && iconPosition === 'right'">
+      {{ icon }}
+    </mat-icon>
+  </button>
+
+  <button
+    *ngSwitchCase="'flat'"
+    mat-flat-button
+    [color]="color"
+    [type]="type"
+    [disabled]="disabled || loading"
+    [routerLink]="routerLink"
+    (click)="onClick($event)">
+    <mat-icon *ngIf="icon && iconPosition === 'left'">
+      {{ icon }}
+    </mat-icon>
+
+    {{ label }}
+
+    <mat-icon *ngIf="icon && iconPosition === 'right'">
+      {{ icon }}
+    </mat-icon>
+  </button>
+
+  <button
+    *ngSwitchCase="'stroked'"
+    mat-stroked-button
+    [color]="color"
+    [type]="type"
+    [disabled]="disabled || loading"
+    [routerLink]="routerLink"
+    (click)="onClick($event)">
+    <mat-icon *ngIf="icon && iconPosition === 'left'">
+      {{ icon }}
+    </mat-icon>
+
+    {{ label }}
+
+    <mat-icon *ngIf="icon && iconPosition === 'right'">
+      {{ icon }}
+    </mat-icon>
+  </button>
+</ng-container>

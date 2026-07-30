@@ -1,0 +1,17 @@
+@use 'abstracts' as abstracts;
+
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  padding-inline: abstracts.rem(16);
+
+  &__analytics {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: abstracts.rem(12);
+
+    @include abstracts.respond-up(desktop) {
+      grid-template-columns: 4fr 6fr;
+    }
+  }
+}

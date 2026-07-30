@@ -1,0 +1,100 @@
+<div class="restaurant-form">
+  <app-ui-button
+    class="restaurant-form__back"
+    variant="stroked"
+    icon="arrow_back"
+    label="Back"
+    routerLink="/restaurant">
+  </app-ui-button>
+
+  <div class="restaurant-form__header">
+    <h1 class="restaurant-form__title mat-headline-1">
+      {{ title }}
+    </h1>
+
+    <p class="restaurant-form__description mat-body-1">
+      Enter the restaurant details and assign one or more owners.
+    </p>
+  </div>
+
+  <mat-card class="restaurant-form__card">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="restaurant-form__field">
+        <app-ui-input
+          label="Restaurant Name"
+          [control]="form.controls.name"
+          [errors]="validationMessages.name">
+        </app-ui-input>
+      </div>
+
+      <div class="restaurant-form__field">
+        <app-ui-input
+          label="Address"
+          [control]="form.controls.address"
+          [errors]="validationMessages.address">
+        </app-ui-input>
+      </div>
+
+      <div class="restaurant-form__field">
+        <!-- Direct the form field validation strictly to your singular tracking control -->
+        <mat-form-field
+          class="restaurant-form__full-width"
+          appearance="outline">
+          <mat-label>Owner Emails</mat-label>
+
+          <mat-chip-grid #chipGrid [formControl]="form.controls.ownersControl">
+            <mat-chip-row
+              *ngFor="let owner of selectedOwners"
+              (removed)="removeOwner(owner)">
+              {{ owner }}
+
+              <button type="button" matChipRemove>
+                <mat-icon>cancel</mat-icon>
+              </button>
+            </mat-chip-row>
+
+            <input
+              matInput
+              placeholder="Enter owner email"
+              [value]="ownerInputValue"
+              (input)="onInputChange($any($event.target).value)"
+              [matChipInputFor]="chipGrid"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              (matChipInputTokenEnd)="addOwner($event)" />
+          </mat-chip-grid>
+
+          <mat-error *ngIf="form.controls.ownersControl.hasError('email')">
+            {{ validationMessages.ownersList.email }}
+          </mat-error>
+
+          <mat-error
+            *ngIf="
+              form.controls.ownersControl.hasError('atLeastOneRequired') &&
+              !form.controls.ownersControl.hasError('email')
+            ">
+            {{ validationMessages.ownersList.atLeastOneRequired }}
+          </mat-error>
+        </mat-form-field>
+
+        <p class="restaurant-form__helper mat-caption">
+          Add emails of users who own/manage this restaurant.
+        </p>
+      </div>
+
+      <div class="restaurant-form__actions">
+        <app-ui-button
+          variant="stroked"
+          label="CANCEL"
+          (buttonClick)="cancel.emit()">
+        </app-ui-button>
+
+        <app-ui-button
+          type="submit"
+          [label]="submitLabel"
+          icon="save"
+          [disabled]="form.invalid">
+        </app-ui-button>
+      </div>
+    </form>
+  </mat-card>
+</div>

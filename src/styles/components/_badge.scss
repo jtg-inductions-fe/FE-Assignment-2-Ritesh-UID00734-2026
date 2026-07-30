@@ -1,0 +1,13 @@
+@use 'abstracts' as abstracts;
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: abstracts.rem(18);
+  height: abstracts.rem(18);
+  padding: abstracts.rem(6);
+  border-radius: abstracts.rem(20);
+  background-color: #fde8e8;
+  color: #e02424;
+}

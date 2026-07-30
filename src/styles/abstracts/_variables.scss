@@ -1,6 +1,11 @@
 @use 'functions' as fn;
 
+$text-secondary: #6b7280;
+$text-error: #d32f2f;
+
 $color-surface-base: #ffffff;
+$color-surface-secondary: #fbfcfe;
+$border-primary: #e0e0e0;
 
 $breakpoints-up: (
   mobile: 320px,

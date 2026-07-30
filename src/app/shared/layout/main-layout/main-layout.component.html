@@ -1,0 +1,13 @@
+<mat-sidenav-container class="layout" [hasBackdrop]="isMobile">
+  <mat-sidenav
+    class="layout__sidebar"
+    [mode]="mode"
+    [opened]="opened"
+    [disableClose]="!isMobile">
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="layout__content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,20 @@
+@use 'abstracts' as abstracts;
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__navigation {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-top: abstracts.rem(1) solid abstracts.$border-primary;
+    padding-inline: abstracts.rem(40);
+  }
+}

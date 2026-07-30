@@ -1,0 +1,42 @@
+@use 'abstracts' as abstracts;
+
+.kpi-card {
+  height: 100%;
+  width: 100%;
+  border-radius: abstracts.rem(10);
+  padding-inline: abstracts.rem(10);
+  padding-block: abstracts.rem(14);
+  box-shadow: none;
+  border: 1px solid abstracts.$border-primary;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: abstracts.rem(16);
+  }
+
+  &__details {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    margin: 0;
+    color: abstracts.$text-secondary;
+  }
+
+  &__value {
+    margin: 0;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: abstracts.rem(56);
+    height: abstracts.rem(56);
+    border-radius: abstracts.rem(10);
+    background: rgba(76, 175, 80, 0.12);
+  }
+}

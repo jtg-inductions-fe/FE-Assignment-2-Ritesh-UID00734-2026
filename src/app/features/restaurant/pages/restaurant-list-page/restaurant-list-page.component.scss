@@ -1,0 +1,120 @@
+@use 'abstracts' as abstracts;
+
+.restaurant-list {
+  display: flex;
+  flex-direction: column;
+  gap: abstracts.rem(24);
+  padding-inline: abstracts.rem(16);
+  padding-block: abstracts.rem(20);
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: abstracts.rem(16);
+
+    @include abstracts.respond-up(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__description {
+    margin-top: abstracts.rem(4);
+    color: abstracts.$text-secondary;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: abstracts.rem(16);
+    padding: abstracts.rem(20);
+    border-radius: abstracts.rem(10);
+    box-shadow:
+      0px 1px 10px 0px #0000001f,
+      0px 4px 5px 0px #00000024,
+      0px 2px 4px 1px #00000033;
+
+    @include abstracts.respond-up(desktop) {
+      gap: 0;
+    }
+  }
+
+  &__table-header {
+    display: none;
+
+    @include abstracts.respond-up(desktop) {
+      display: grid;
+      grid-template-columns:
+        abstracts.rem(220)
+        2fr
+        abstracts.rem(320)
+        abstracts.rem(160);
+      column-gap: abstracts.rem(24);
+      align-items: center;
+      padding-bottom: abstracts.rem(16);
+      border-bottom: abstracts.rem(1) solid abstracts.$border-primary;
+      color: abstracts.$text-secondary;
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: abstracts.rem(18);
+    padding: abstracts.rem(20);
+    border: abstracts.rem(1) solid abstracts.$border-primary;
+    border-radius: abstracts.rem(12);
+
+    @include abstracts.respond-up(tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: abstracts.rem(18) abstracts.rem(24);
+      align-items: center;
+    }
+
+    @include abstracts.respond-up(desktop) {
+      display: grid;
+      grid-template-columns:
+        abstracts.rem(220)
+        2fr
+        abstracts.rem(320)
+        abstracts.rem(160);
+      column-gap: abstracts.rem(24);
+      padding: abstracts.rem(20) 0;
+      border: 0;
+      border-bottom: abstracts.rem(1) solid abstracts.$border-primary;
+      border-radius: 0;
+    }
+  }
+
+  &__address {
+    color: abstracts.$text-secondary;
+  }
+
+  &__owners {
+    display: flex;
+    flex-wrap: wrap;
+    gap: abstracts.rem(8);
+  }
+
+  &__owner {
+    font-size: abstracts.rem(12);
+  }
+
+  &__actions {
+    display: flex;
+
+    @include abstracts.respond-up(desktop) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__actions-header {
+    text-align: right;
+  }
+}

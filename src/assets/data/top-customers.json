@@ -1,0 +1,397 @@
+{
+  "all": [
+    {
+      "id": 1,
+      "name": "John Anderson",
+      "email": "john.anderson@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=JohnAnderson",
+      "totalSpent": 12450
+    },
+    {
+      "id": 2,
+      "name": "Sarah Williams",
+      "email": "sarah.williams@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=SarahWilliams",
+      "totalSpent": 10980
+    },
+    {
+      "id": 3,
+      "name": "David Miller",
+      "email": "david.miller@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=DavidMiller",
+      "totalSpent": 9870
+    },
+    {
+      "id": 4,
+      "name": "Emily Johnson",
+      "email": "emily.johnson@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=EmilyJohnson",
+      "totalSpent": 8420
+    },
+    {
+      "id": 5,
+      "name": "Michael Brown",
+      "email": "michael.brown@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=MichaelBrown",
+      "totalSpent": 7950
+    },
+    {
+      "id": 6,
+      "name": "Priya Sharma",
+      "email": "priya.sharma@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=PriyaSharma",
+      "totalSpent": 7680
+    },
+    {
+      "id": 7,
+      "name": "Rahul Verma",
+      "email": "rahul.verma@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=RahulVerma",
+      "totalSpent": 7340
+    },
+    {
+      "id": 8,
+      "name": "Sneha Kapoor",
+      "email": "sneha.kapoor@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=SnehaKapoor",
+      "totalSpent": 7120
+    },
+    {
+      "id": 9,
+      "name": "Arjun Mehta",
+      "email": "arjun.mehta@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=ArjunMehta",
+      "totalSpent": 6890
+    },
+    {
+      "id": 10,
+      "name": "Riya Patel",
+      "email": "riya.patel@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=RiyaPatel",
+      "totalSpent": 6510
+    },
+    {
+      "id": 11,
+      "name": "Amit Singh",
+      "email": "amit.singh@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=AmitSingh",
+      "totalSpent": 6320
+    },
+    {
+      "id": 12,
+      "name": "Neha Joshi",
+      "email": "neha.joshi@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=NehaJoshi",
+      "totalSpent": 6040
+    },
+    {
+      "id": 13,
+      "name": "Karan Malhotra",
+      "email": "karan.malhotra@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=KaranMalhotra",
+      "totalSpent": 5890
+    },
+    {
+      "id": 14,
+      "name": "Olivia Wilson",
+      "email": "olivia.wilson@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=OliviaWilson",
+      "totalSpent": 5620
+    },
+    {
+      "id": 15,
+      "name": "Emma Clark",
+      "email": "emma.clark@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=EmmaClark",
+      "totalSpent": 5410
+    }
+  ],
+  "1": [
+    {
+      "id": 101,
+      "name": "John Anderson",
+      "email": "john.anderson@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=JohnAnderson",
+      "totalSpent": 12450
+    },
+    {
+      "id": 102,
+      "name": "Sarah Williams",
+      "email": "sarah.williams@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=SarahWilliams",
+      "totalSpent": 10980
+    },
+    {
+      "id": 103,
+      "name": "David Miller",
+      "email": "david.miller@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=DavidMiller",
+      "totalSpent": 9870
+    },
+    {
+      "id": 104,
+      "name": "Emily Johnson",
+      "email": "emily.johnson@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=EmilyJohnson",
+      "totalSpent": 8420
+    },
+    {
+      "id": 105,
+      "name": "Michael Brown",
+      "email": "michael.brown@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=MichaelBrown",
+      "totalSpent": 7950
+    },
+    {
+      "id": 106,
+      "name": "Sophia Davis",
+      "email": "sophia.davis@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=SophiaDavis",
+      "totalSpent": 7560
+    },
+    {
+      "id": 107,
+      "name": "Daniel Moore",
+      "email": "daniel.moore@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=DanielMoore",
+      "totalSpent": 7210
+    },
+    {
+      "id": 108,
+      "name": "Jessica Lee",
+      "email": "jessica.lee@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=JessicaLee",
+      "totalSpent": 6890
+    },
+    {
+      "id": 109,
+      "name": "Ryan Hall",
+      "email": "ryan.hall@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=RyanHall",
+      "totalSpent": 6480
+    },
+    {
+      "id": 110,
+      "name": "Grace White",
+      "email": "grace.white@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=GraceWhite",
+      "totalSpent": 6150
+    }
+  ],
+  "2": [
+    {
+      "id": 201,
+      "name": "Priya Sharma",
+      "email": "priya.sharma@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=PriyaSharma",
+      "totalSpent": 11820
+    },
+    {
+      "id": 202,
+      "name": "Rahul Verma",
+      "email": "rahul.verma@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=RahulVerma",
+      "totalSpent": 10560
+    },
+    {
+      "id": 203,
+      "name": "Sneha Kapoor",
+      "email": "sneha.kapoor@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=SnehaKapoor",
+      "totalSpent": 9840
+    },
+    {
+      "id": 204,
+      "name": "Arjun Mehta",
+      "email": "arjun.mehta@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=ArjunMehta",
+      "totalSpent": 8910
+    },
+    {
+      "id": 205,
+      "name": "Riya Patel",
+      "email": "riya.patel@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=RiyaPatel",
+      "totalSpent": 8220
+    },
+    {
+      "id": 206,
+      "name": "Vikram Rao",
+      "email": "vikram.rao@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=VikramRao",
+      "totalSpent": 7840
+    },
+    {
+      "id": 207,
+      "name": "Ananya Iyer",
+      "email": "ananya.iyer@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=AnanyaIyer",
+      "totalSpent": 7430
+    },
+    {
+      "id": 208,
+      "name": "Nikhil Jain",
+      "email": "nikhil.jain@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=NikhilJain",
+      "totalSpent": 7050
+    },
+    {
+      "id": 209,
+      "name": "Meera Bhat",
+      "email": "meera.bhat@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=MeeraBhat",
+      "totalSpent": 6640
+    },
+    {
+      "id": 210,
+      "name": "Harsh Shah",
+      "email": "harsh.shah@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=HarshShah",
+      "totalSpent": 6280
+    }
+  ],
+  "3": [
+    {
+      "id": 301,
+      "name": "Amit Singh",
+      "email": "amit.singh@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=AmitSingh",
+      "totalSpent": 13640
+    },
+    {
+      "id": 302,
+      "name": "Neha Joshi",
+      "email": "neha.joshi@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=NehaJoshi",
+      "totalSpent": 11750
+    },
+    {
+      "id": 303,
+      "name": "Karan Malhotra",
+      "email": "karan.malhotra@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=KaranMalhotra",
+      "totalSpent": 10380
+    },
+    {
+      "id": 304,
+      "name": "Pooja Nair",
+      "email": "pooja.nair@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=PoojaNair",
+      "totalSpent": 9510
+    },
+    {
+      "id": 305,
+      "name": "Rohit Gupta",
+      "email": "rohit.gupta@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=RohitGupta",
+      "totalSpent": 8640
+    },
+    {
+      "id": 306,
+      "name": "Isha Kapoor",
+      "email": "isha.kapoor@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=IshaKapoor",
+      "totalSpent": 8250
+    },
+    {
+      "id": 307,
+      "name": "Aditya Menon",
+      "email": "aditya.menon@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=AdityaMenon",
+      "totalSpent": 7810
+    },
+    {
+      "id": 308,
+      "name": "Sanya Roy",
+      "email": "sanya.roy@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=SanyaRoy",
+      "totalSpent": 7420
+    },
+    {
+      "id": 309,
+      "name": "Varun Sethi",
+      "email": "varun.sethi@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=VarunSethi",
+      "totalSpent": 7010
+    },
+    {
+      "id": 310,
+      "name": "Nisha Arora",
+      "email": "nisha.arora@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=NishaArora",
+      "totalSpent": 6630
+    }
+  ],
+  "4": [
+    {
+      "id": 401,
+      "name": "Olivia Wilson",
+      "email": "olivia.wilson@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=OliviaWilson",
+      "totalSpent": 14820
+    },
+    {
+      "id": 402,
+      "name": "Liam Taylor",
+      "email": "liam.taylor@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=LiamTaylor",
+      "totalSpent": 12650
+    },
+    {
+      "id": 403,
+      "name": "Sophia Davis",
+      "email": "sophia.davis@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=SophiaDavis",
+      "totalSpent": 11240
+    },
+    {
+      "id": 404,
+      "name": "Noah Martin",
+      "email": "noah.martin@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=NoahMartin",
+      "totalSpent": 9750
+    },
+    {
+      "id": 405,
+      "name": "Emma Clark",
+      "email": "emma.clark@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=EmmaClark",
+      "totalSpent": 9040
+    },
+    {
+      "id": 406,
+      "name": "Benjamin Scott",
+      "email": "benjamin.scott@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=BenjaminScott",
+      "totalSpent": 8620
+    },
+    {
+      "id": 407,
+      "name": "Charlotte King",
+      "email": "charlotte.king@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=CharlotteKing",
+      "totalSpent": 8210
+    },
+    {
+      "id": 408,
+      "name": "Lucas Young",
+      "email": "lucas.young@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=LucasYoung",
+      "totalSpent": 7840
+    },
+    {
+      "id": 409,
+      "name": "Amelia Green",
+      "email": "amelia.green@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=AmeliaGreen",
+      "totalSpent": 7430
+    },
+    {
+      "id": 410,
+      "name": "Henry Walker",
+      "email": "henry.walker@example.com",
+      "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=HenryWalker",
+      "totalSpent": 7060
+    }
+  ]
+}

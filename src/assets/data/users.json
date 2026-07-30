@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Admin",
+    "email": "admin@test.com",
+    "password": "admin123",
+    "role": "admin",
+    "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=Admin",
+    "permissions": [
+      "VIEW_DASHBOARD",
+      "VIEW_RESTAURANTS",
+      "CREATE_RESTAURANT",
+      "EDIT_RESTAURANT"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Restaurant Owner",
+    "email": "owner@test.com",
+    "password": "owner123",
+    "role": "owner",
+    "restaurantId": 3,
+    "avatar": "https://api.dicebear.com/9.x/avataaars/svg?seed=RestaurantOwner",
+    "permissions": [
+      "VIEW_DASHBOARD",
+      "VIEW_ORDERS",
+      "VIEW_MENU",
+      "VIEW_BILLING_HISTORY",
+      "VIEW_INVENTORY"
+    ]
+  }
+]
